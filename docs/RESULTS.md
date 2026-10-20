@@ -26,6 +26,8 @@ Original development gates: **38 / 32 / 24** successes. H1 BC passes all three. 
 
 ## Baseline-to-BC paired transitions
 
+![Observed success-rate change for H1 BC relative to baseline.](assets/charts/baseline_gain.svg)
+
 | Outcome transition | No push | Medium | Strong |
 |---|---:|---:|---:|
 | Failure → success | 1 | 3 | 7 |
@@ -46,6 +48,8 @@ The strong-push gain is six net successes, or **15 percentage points**. No-push 
 Flags can overlap and are not guaranteed to be mutually exclusive counts. Missing timeout fields are inferred only for otherwise unclassified terminal failures. BC reduces strong-push falls, while forbidden contact remains a major limitation.
 
 ## Per-source success
+
+![Strong-push success counts by development source.](assets/charts/source_breakdown.svg)
 
 Entries are no / medium / strong successes; each number has denominator 8.
 
@@ -107,3 +111,18 @@ Do not divide these timings by 24 to report a single-character end-to-end latenc
 The defined engineering scope is complete: frozen controller, development and validation gates, reserved-motion evaluation, language-to-physics example, matched recording and annotated gallery. The release verifies file integrity and presentation; it does not rerun GPU simulation.
 
 Further research should prioritize forbidden-contact failures, no-push regressions, independent unseen-room evaluation, multiple training seeds, and data-volume-matched comparisons. Broad free-form language support, physical-robot transfer and paper submission are outside the completed scope.
+
+## Reproduce the figures
+
+![Five-controller comparison across the three push strengths.](assets/charts/controller_comparison.svg)
+
+All figures are generated from the frozen JSON files in [`evidence/`](../evidence/), with the same counts used in the tables above. Success-rate axes start at zero; the change plot uses a signed axis centered on a labeled zero line. Counts and denominators are displayed explicitly.
+
+```bash
+python -m pip install -r requirements-plots.txt
+python tools/plot_results.py
+```
+
+Outputs: three SVG figures, matching PNG exports, and [results.csv](assets/charts/results.csv). The [plotting script](../tools/plot_results.py) reads all five controller summaries directly. No training or physics rerun is needed to regenerate the plots.
+
+The figures report recorded proportions. Error bars are omitted because the evaluation does not provide independent repeated training seeds, and zero-force direction slots do not constitute independent perturbations. These figures do not establish statistical significance.

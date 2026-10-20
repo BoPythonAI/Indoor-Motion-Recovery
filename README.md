@@ -28,6 +28,15 @@ Task-constrained human motion recovery in scanned indoor scenes. A **single-step
 
 **H1 means a one-step prediction horizon.** The simulated character is an SMPL humanoid; this project does not evaluate the Unitree H1 robot.
 
+## At a glance
+
+| Strong-push recovery | Original evaluation gates | Published demos |
+|---|---|---|
+| **67.5%** H1 BC vs **52.5%** baseline | **3/3** development + **3/3** validation | **3** scenes · **9** individual clips |
+| **+15 percentage points**, 27 vs 21 successes / 40 | Selected checkpoint: frozen BC / EMA | Original Mesh · Baseline · H1 |
+
+[Explore the charts ↓](#-results) · [Watch the demos ↓](#-three-demos) · [Reproduce the plots](docs/RESULTS.md#reproduce-the-figures)
+
 ## 🎬 Three demos
 
 Every comparison shows **Original Motion · Mesh**, **Baseline Controller · Capsule Physics**, and **H1 Model · Capsule Physics**. Click a preview to open the video gallery.
@@ -65,6 +74,17 @@ All three examples use a **0.75 BW push lasting 0.20 s**. English videos show ev
 
 Five development motion sources, **40 recorded cases per strength**, with the same reference, original goal, scene, and push protocol.
 
+![Success rates of five controllers under no, medium and strong pushes. Selected H1 BC: 95%, 82.5%, 67.5%.](docs/assets/charts/controller_comparison.svg)
+
+### What improves?
+
+![H1 BC changes success by minus 2.5, zero and plus 15 percentage points relative to baseline.](docs/assets/charts/baseline_gain.svg)
+
+At strong push, H1 BC achieves **6 additional net successes out of 40**. At medium push the total is unchanged; without a push it has one fewer success. These are observed development proportions, not repeated-seed averages or statistical-significance estimates.
+
+<details>
+<summary><strong>View exact counts and all controller results</strong></summary>
+
 | Controller | No push | 0.45 BW | 0.75 BW |
 |---|---:|---:|---:|
 | Same-reference baseline | 97.5% (39/40) | 82.5% (33/40) | 52.5% (21/40) |
@@ -73,9 +93,19 @@ Five development motion sources, **40 recorded cases per strength**, with the sa
 | H1 diffusion | 85.0% (34/40) | 82.5% (33/40) | 72.5% (29/40) |
 | Nominal-only H1 BC | 92.5% (37/40) | 87.5% (35/40) | 75.0% (30/40) |
 
+</details>
+
 H1 BC improves strong-push success by **15 percentage points** over the baseline and passes all original development and validation gates. Diffusion and the nominal-only control score higher on strong pushes, but miss the no-push gate. The selected model is not the best on every individual metric.
 
+### Does the gain occur across sources?
+
+![Strong-push successes for baseline and H1 BC across five motion sources, with counts out of eight.](docs/assets/charts/source_breakdown.svg)
+
+The selected model improves four source-level strong-push totals and ties on the fifth. Source `015317` contains the office-chair demo: its selected failure-to-success clip does not imply a higher aggregate score for that source.
+
 Validation: **16/16 at each strength** across two sources. Reserved motion `011387` in a known room: **8/8, 7/8, 7/8**, compared with baseline **8/8, 6/8, 4/8**. Development sources were reused during iteration; these results do not establish broad unseen-room generalization. [Full results and limitations →](docs/RESULTS.md)
+
+[Download chart data (CSV)](docs/assets/charts/results.csv) · [Figure files (SVG / PNG)](docs/assets/charts/) · [Plotting script](tools/plot_results.py)
 
 ## 🧩 Pipeline
 

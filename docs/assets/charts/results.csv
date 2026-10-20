@@ -1,0 +1,16 @@
+method,push_bw,success,total,success_percent
+Baseline,0.0,39,40,97.5
+Baseline,0.45,33,40,82.5
+Baseline,0.75,21,40,52.5
+Teacher,0.0,38,40,95.0
+Teacher,0.45,32,40,80.0
+Teacher,0.75,30,40,75.0
+H1 BC (selected),0.0,38,40,95.0
+H1 BC (selected),0.45,33,40,82.5
+H1 BC (selected),0.75,27,40,67.5
+H1 diffusion,0.0,34,40,85.0
+H1 diffusion,0.45,33,40,82.5
+H1 diffusion,0.75,29,40,72.5
+Nominal-only BC,0.0,37,40,92.5
+Nominal-only BC,0.45,35,40,87.5
+Nominal-only BC,0.75,30,40,75.0

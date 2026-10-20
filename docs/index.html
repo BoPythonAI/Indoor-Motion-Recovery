@@ -12,7 +12,7 @@
 <body>
 <header class="site-header">
   <a class="brand" href="#top"><img src="assets/icon.svg" alt="" width="34" height="34">Indoor Motion Recovery</a>
-  <nav aria-label="Project"><a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery">GitHub ↗</a><a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery/blob/main/docs/RESULTS.md">Results</a></nav>
+  <nav aria-label="Project"><a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery">GitHub ↗</a><a href="#results">Results</a></nav>
 </header>
 <main id="top">
   <section class="intro">
@@ -28,6 +28,30 @@
   <nav class="scene-nav" aria-label="Demo scenes"><a href="#office_chair">Office chair</a><a href="#bedroom_door">Bedroom door</a><a href="#lounge_armchair">Lounge armchair</a></nav>
   <div class="legend"><span><i class="dot goal"></i> Goal / success</span><span><i class="dot push"></i> Actual push</span><span><i class="dot alert"></i> Forbidden object / failure</span><span>0.75 BW · 0.20 s push · 0.5× playback</span></div>
   <div id="scenes"></div>
+  <section id="results" class="results-section" aria-labelledby="results-heading">
+    <div class="eyebrow">MEASURED PERFORMANCE</div>
+    <h2 id="results-heading">Recovery in numbers.</h2>
+    <p class="results-lead">Five development motion sources. Forty recorded cases per push strength. The same original goal and push protocol.</p>
+    <div class="metric-grid">
+      <div><strong>67.5%</strong><span>H1 BC · strong-push success</span></div>
+      <div><strong>+15 pp</strong><span>over the same-reference baseline</span></div>
+      <div><strong>27 / 40</strong><span>successful strong-push cases</span></div>
+    </div>
+    <figure class="result-figure">
+      <a href="assets/charts/controller_comparison.svg" target="_blank" rel="noopener"><img src="assets/charts/controller_comparison.svg" loading="lazy" width="1400" height="600" alt="Five-controller success-rate comparison. Selected H1 BC: 95%, 82.5%, and 67.5% for no, medium, and strong pushes."></a>
+      <figcaption>All five controllers, including teacher and nominal-only comparisons. H1 BC clears the original selection gates; it is not the highest-scoring method on every metric.</figcaption>
+    </figure>
+    <figure class="result-figure">
+      <a href="assets/charts/baseline_gain.svg" target="_blank" rel="noopener"><img src="assets/charts/baseline_gain.svg" loading="lazy" width="1100" height="580" alt="H1 BC minus baseline: minus 2.5 percentage points without a push, zero at medium push, plus 15 at strong push."></a>
+      <figcaption>Six additional net successes under strong pushes. Medium-push success is unchanged, while no-push success decreases by one case.</figcaption>
+    </figure>
+    <details class="source-chart"><summary>Explore the source-by-source breakdown</summary>
+      <img src="assets/charts/source_breakdown.svg" loading="lazy" width="1200" height="580" alt="Strong-push counts out of eight for baseline and H1 BC across five development motion sources.">
+      <p>H1 BC improves four source totals and ties on one. These sources were reused during development.</p>
+    </details>
+    <p class="results-scope">Recorded proportions, not repeated-seed averages. These results do not establish unseen-room generalization or statistical significance.</p>
+    <div class="result-links"><a href="assets/charts/results.csv" download>Download chart data (CSV)</a><a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery/blob/main/docs/RESULTS.md">Full evaluation and plotting instructions ↗</a></div>
+  </section>
   <section class="notes" aria-labelledby="notes-heading">
     <h2 id="notes-heading">What the demos show</h2>
     <div><p>The Mesh view is the original kinematic reference. Capsule views replay actual physics trajectories. The orange arrow follows the recorded force; red failure alerts mark the fall or verified contact.</p><p>Shorter recordings hold their final frame with an explicit label. No motion is invented after termination. These three selected examples do not estimate overall success.</p><p>Across five development sources, H1 BC succeeds in <strong>95% / 82.5% / 67.5%</strong> of no / medium / strong-push cases. <a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery/blob/main/docs/RESULTS.md">Read the complete evaluation →</a></p></div>
