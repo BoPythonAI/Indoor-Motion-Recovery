@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Three recorded indoor human-motion recovery demos: original Mesh motion, baseline capsule physics, and H1 BC capsule physics.">
+  <meta name="theme-color" content="#153343">
+  <title>Indoor Motion Recovery · Three Demos</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#top"><img src="assets/icon.svg" alt="" width="34" height="34">Indoor Motion Recovery</a>
+  <nav aria-label="Project"><a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery">GitHub ↗</a><a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery/blob/main/docs/RESULTS.md">Results</a></nav>
+</header>
+<main id="top">
+  <section class="intro">
+    <div class="eyebrow"><span></span> RECORDED PHYSICS · H1 BC / EMA</div>
+    <h1>A push.<br>A recovery.<br><em>The same goal.</em></h1>
+    <div class="intro-copy">
+      <p>A simulated human follows a task, absorbs a short push, and continues toward the original target while avoiding forbidden contact.</p>
+      <p class="quiet">Three selected comparisons. Every recorded frame. English annotations.</p>
+      <a class="button" href="#office_chair">Watch the comparisons <span>↓</span></a>
+    </div>
+    <svg class="force-signature" viewBox="0 0 280 220" aria-hidden="true"><path d="M12 184C85 211 68 129 136 158S190 151 246 92" fill="none" stroke="#15959a" stroke-width="5" stroke-dasharray="8 7"/><circle cx="248" cy="87" r="20" fill="none" stroke="#15959a" stroke-width="3"/><circle cx="248" cy="87" r="6" fill="#15959a"/><circle cx="128" cy="44" r="15" fill="#47b8cf"/><path d="M124 77l-14 47m5-41L81 110l-18 32m68-57l26 27 21-9m-78 25l-29 32-13 35m61-62l17 29 20 27" fill="none" stroke="#47b8cf" stroke-width="15" stroke-linecap="round"/><path d="M13 65L83 82" stroke="#dd8042" stroke-width="8"/><path d="M80 69l23 18-29 7Z" fill="#dd8042"/></svg>
+  </section>
+  <nav class="scene-nav" aria-label="Demo scenes"><a href="#office_chair">Office chair</a><a href="#bedroom_door">Bedroom door</a><a href="#lounge_armchair">Lounge armchair</a></nav>
+  <div class="legend"><span><i class="dot goal"></i> Goal / success</span><span><i class="dot push"></i> Actual push</span><span><i class="dot alert"></i> Forbidden object / failure</span><span>0.75 BW · 0.20 s push · 0.5× playback</span></div>
+  <div id="scenes"></div>
+  <section class="notes" aria-labelledby="notes-heading">
+    <h2 id="notes-heading">What the demos show</h2>
+    <div><p>The Mesh view is the original kinematic reference. Capsule views replay actual physics trajectories. The orange arrow follows the recorded force; red failure alerts mark the fall or verified contact.</p><p>Shorter recordings hold their final frame with an explicit label. No motion is invented after termination. These three selected examples do not estimate overall success.</p><p>Across five development sources, H1 BC succeeds in <strong>95% / 82.5% / 67.5%</strong> of no / medium / strong-push cases. <a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery/blob/main/docs/RESULTS.md">Read the complete evaluation →</a></p></div>
+  </section>
+</main>
+<footer><span>Indoor Motion Recovery · Engineering release 1.0</span><a href="https://github.com/BoPythonAI/Indoor-Motion-Recovery/releases/tag/v1.0.0">Download the checkpoint and source clips ↗</a></footer>
+<script src="app.js"></script>
+</body>
+</html>

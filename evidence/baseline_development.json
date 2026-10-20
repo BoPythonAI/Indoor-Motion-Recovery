@@ -1,0 +1,114 @@
+{
+  "method": "base",
+  "inference_seed": 17,
+  "num_envs": 24,
+  "source_ids": [
+    "011723",
+    "015317",
+    "015542",
+    "015547",
+    "015571"
+  ],
+  "summary": {
+    "0.0": {
+      "success": 39,
+      "total": 40
+    },
+    "0.45": {
+      "success": 33,
+      "total": 40
+    },
+    "0.75": {
+      "success": 21,
+      "total": 40
+    }
+  },
+  "per_source": {
+    "011723": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 6,
+        "total": 8,
+        "falls": 2
+      },
+      "0.75": {
+        "success": 1,
+        "total": 8,
+        "falls": 6
+      }
+    },
+    "015317": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 5,
+        "total": 8,
+        "falls": 1
+      }
+    },
+    "015542": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 7,
+        "total": 8,
+        "falls": 1
+      }
+    },
+    "015547": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 5,
+        "total": 8,
+        "falls": 3
+      }
+    },
+    "015571": {
+      "0.0": {
+        "success": 7,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 5,
+        "total": 8,
+        "falls": 1
+      },
+      "0.75": {
+        "success": 3,
+        "total": 8,
+        "falls": 2
+      }
+    }
+  },
+  "goal_numeric_contract": "original_bank_terminal_runtime_order_v2"
+}

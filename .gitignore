@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+models/
+downloads/
+runs/
+rebuilt_media/
+*.local.json
+data/
+pretrained/
+*.log
+.DS_Store

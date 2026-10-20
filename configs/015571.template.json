@@ -1,0 +1,192 @@
+{
+  "mode": "evaluate",
+  "method": "bc",
+  "seed": 17,
+  "motion_metadata": "${PROJECT_ROOT}/data/scenes/015571.json",
+  "output": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015571/evaluation",
+  "strengths": [
+    0.0,
+    0.45,
+    0.75
+  ],
+  "adaptive_phase": true,
+  "scene_dir": "${ASSET_ROOT}/scenes/scene0329_00_015571",
+  "forbidden_id": 36,
+  "execute_steps": 1,
+  "terrain_checkpoint": "${PROJECT_ROOT}/pretrained/smpl-terrains/inference_only.ckpt",
+  "teacher_kind": "terrain_surface",
+  "tracker_checkpoint": "${PROTOMOTIONS_ROOT}/data/pretrained_models/motion_tracker/smpl/last.ckpt",
+  "feature_version": "v3_terrain_reference__terrain_correction_v1__foot_clearance_v1",
+  "stop_reference_version": "original_freeze_v5_dynamic",
+  "motion_bank": "${PROJECT_ROOT}/data/planned_reference_experiment/015571.pt",
+  "surface_curriculum": false,
+  "geometry_version": "mjcf_foot_obb_forbidden_aabb_sat15_v1",
+  "surface_mjcf_path": "${PROTOMOTIONS_ROOT}/protomotions/data/assets/mjcf/smpl_humanoid.xml",
+  "surface_mjcf_sha256": "58dc997c830b3ded2d2b4528797ed2768f9528b2f25aa008e541fe3a9083e7cc",
+  "proximity_reward": "-2 * exp(-min(bodypoint_gap, max(foot_sat_gap, 0)) / 0.12)",
+  "motion_bank_sha256": "ef0710162a09c5778f78b9097517834097f5a3908aca843bc23ccdb0ab28dfa2",
+  "motion_metadata_sha256": "14124b94a9a855694d5addd21d606cd8f311b06de57b80e08136800e092f3f75",
+  "reference_planning_version": "goal_preserving_xy_reference_shift_v1",
+  "reference_plan_manifest": "${PROJECT_ROOT}/data/planned_reference_experiment/015571.plan.json",
+  "reference_plan_status": "PROPOSED_FOR_PHYSICS_WITH_FLOOR_PROXY_WARNING",
+  "reference_plan_experimental_export": true,
+  "reference_plan_geometry_qualified": false,
+  "reference_plan_manifest_sha256": "d367b0a65e8f6fa8ab712fc4079adaf20246d0715b91d07cec36259edd948eea",
+  "reference_original_bank": "${PROJECT_ROOT}/data/scenes/015571.pt",
+  "cases": [
+    {
+      "motion": 0,
+      "bw": 0.0,
+      "direction": 0,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.0,
+      "direction": 0,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.0,
+      "direction": 1,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.0,
+      "direction": 1,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.0,
+      "direction": 2,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.0,
+      "direction": 2,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.0,
+      "direction": 3,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.0,
+      "direction": 3,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.45,
+      "direction": 0,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.45,
+      "direction": 0,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.45,
+      "direction": 1,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.45,
+      "direction": 1,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.45,
+      "direction": 2,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.45,
+      "direction": 2,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.45,
+      "direction": 3,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.45,
+      "direction": 3,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.75,
+      "direction": 0,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.75,
+      "direction": 0,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.75,
+      "direction": 1,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.75,
+      "direction": 1,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.75,
+      "direction": 2,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.75,
+      "direction": 2,
+      "phase": 0.6
+    },
+    {
+      "motion": 0,
+      "bw": 0.75,
+      "direction": 3,
+      "phase": 0.3
+    },
+    {
+      "motion": 0,
+      "bw": 0.75,
+      "direction": 3,
+      "phase": 0.6
+    }
+  ],
+  "record": false,
+  "record_env": 0,
+  "action_target_version": "executed_total_minus_composed_terrain_prior_v1",
+  "student_checkpoint": "${PROJECT_ROOT}/student_h1_v1/checkpoints/bc/last.pt",
+  "student_weights": "ema",
+  "noise_mode": "independent",
+  "inference_steps": 8,
+  "measure_latency": true,
+  "physics_seed": 17,
+  "inference_seed": 17
+}

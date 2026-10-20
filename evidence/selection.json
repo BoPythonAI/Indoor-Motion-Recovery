@@ -1,0 +1,5004 @@
+{
+  "status": "FROZEN_QUALIFIED",
+  "selection_version": "student_selection_h1_bc_v1",
+  "main_method": "bc",
+  "student_checkpoint": "${PROJECT_ROOT}/student_h1_v1/checkpoints/bc/last.pt",
+  "student_checkpoint_sha256": "b3098abe5d13fda49c29d785f566f9fa5c96e332231ec105b8e33bc70a0ac4e2",
+  "weights": "ema",
+  "horizon": 1,
+  "execute_steps": 1,
+  "inference_steps": 8,
+  "num_envs": 24,
+  "physics_seed": 17,
+  "inference_seed": 17,
+  "inference_seed_semantics": "BC is deterministic; private seed has no action-sampling meaning",
+  "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+  "teacher_checkpoint_sha256": "a85bbf74504ef9dc204b95ddbc2715360395744a600f2c288730c664502dba68",
+  "frozen_prior": {
+    "kind": "official_terrain_prior",
+    "flat_checkpoint": "${PROTOMOTIONS_ROOT}/data/pretrained_models/motion_tracker/smpl/last.ckpt",
+    "flat_sha256": "1f6d201e3ef88c691c3f9472b7ed434a44484bef0cc00501cd84ed6cc8e80bb0",
+    "terrain_checkpoint": "${PROJECT_ROOT}/pretrained/smpl-terrains/inference_only.ckpt",
+    "terrain_sha256": "08631f5acd726050914f0d62690557b17297d8d40017a44bf7d2cfbc661fb11f"
+  },
+  "identity": {
+    "checkpoint": {
+      "path": "${PROJECT_ROOT}/student_h1_v1/checkpoints/bc/last.pt",
+      "sha256": "b3098abe5d13fda49c29d785f566f9fa5c96e332231ec105b8e33bc70a0ac4e2"
+    },
+    "dataset": {
+      "path": "${PROJECT_ROOT}/student_h1_v1/checkpoints/bc/dataset.json",
+      "sha256": "8dc9b64752560ed567ee04b5548b73fb28a638b9e6ddf8332b9e95db8932783b"
+    },
+    "training": {
+      "episodes": 2609,
+      "supervised_frames": 174390,
+      "seed": 109,
+      "updates": 15000,
+      "batch_size": 256,
+      "ema_max_decay": 0.9999,
+      "ema_power": 0.75,
+      "directories": [
+        "${PROJECT_ROOT}/pilot_surface50_planned_1200/data/full",
+        "${PROJECT_ROOT}/pilot_surface50_planned_1200/data/takeover",
+        "${PROJECT_ROOT}/pilot_surface50_planned_1200/data/late_takeover",
+        "${PROJECT_ROOT}/student_aggregation_surface_v1/data/bc_early",
+        "${PROJECT_ROOT}/student_aggregation_surface_v1/data/bc_hold",
+        "${PROJECT_ROOT}/student_aggregation_surface_v1/data/diffusion_early",
+        "${PROJECT_ROOT}/student_aggregation_surface_v1/data/diffusion_hold"
+      ],
+      "dataset_identity": {
+        "feature_version": "v3_terrain_reference__terrain_correction_v1__foot_clearance_v1",
+        "action_target_version": "executed_total_minus_composed_terrain_prior_v1",
+        "teacher_checkpoint_sha256": "a85bbf74504ef9dc204b95ddbc2715360395744a600f2c288730c664502dba68",
+        "stop_reference_version": "original_freeze_v5_dynamic",
+        "motion_bank_sha256": "9102a405bd125084d3c46d4af0714f67e4adac7be4eac897125eb24ed6b99087",
+        "motion_metadata_sha256": "3e2140fe268caf422527c7d7dd9e82c2dfdc89011499ac0311b29251cb3c5bc0",
+        "geometry_version": "mjcf_foot_obb_forbidden_aabb_sat15_v1",
+        "surface_mjcf_sha256": "58dc997c830b3ded2d2b4528797ed2768f9528b2f25aa008e541fe3a9083e7cc",
+        "prior": {
+          "flat_sha256": "1f6d201e3ef88c691c3f9472b7ed434a44484bef0cc00501cd84ed6cc8e80bb0",
+          "terrain_sha256": "08631f5acd726050914f0d62690557b17297d8d40017a44bf7d2cfbc661fb11f"
+        }
+      }
+    },
+    "student_runtime": "${PROJECT_ROOT}/scripts_student_surface",
+    "teacher_runtime": "${PROJECT_ROOT}/scripts_teacher_planned",
+    "runtime_source_sha256": {
+      "student": {
+        "check_cpu.py": "c5724ae12178a8e2567e32c5bac1040bb34b1938dcacde76a28b21016c4b8c53",
+        "check_inference_seed.py": "c1add44001791b1cbc4f59bd23227cea860fbf6d016fde94319845bb21e99cdb",
+        "contracts.py": "30bd06eb323d8a9d99e521f692e2ada2afeb332ec02356c44d3f9aac304ddb5c",
+        "controller.py": "74ce5d425e58198067c86510e64f208b0b91a00aeae604e4badd8efb37c946f3",
+        "dataset.py": "8a4fd6b366564331a359740f34704c2c157c1c19db00e89b701cc668d663c380",
+        "dataset_sampling.py": "5119370884c609e9b5e52ce741f31799aad451f5add54c654d51743cd9a6fe91",
+        "diagnose_surface_imitation.py": "5485a0b810ab4adffa871e216b0e4dfd666d57a62f45cdfc36b2ea9810ffed08",
+        "entry.py": "71ae25d3a94287eecad714cdbb4c0d00cb8803a0966ee44650584782dd47ff5d",
+        "inspect_surface_pilot_data.py": "ce5112570acdc57c69af45f5642f6924c15d62bbdaa4e8e2735b16cd474dc7f2",
+        "launch.sh": "a3284f5c50c84c8f43b8fa3c480d9e104a87414c8310a1c4a29455e89070419d",
+        "model.py": "227108294614bc28729dede1270278fc2689220862cf169898239c21118efaaf",
+        "student_collection.py": "e317e1dfafd10c24de8ca526509abe7688352da27c134eb41c7800797d48f682",
+        "student_runtime.py": "93c97d9d484994fdaf703e088c320d3667813080c2613028e257ff504d3a9659",
+        "train_student.py": "288e02f4d7366fd6f5ac428cbbc5b41024a5c58b03a71afeb89660e112c7ce05",
+        "warm_dependency.py": "9f8522538a3c6169d4eadf15cd8e137a90871447dcf54845262ff92b1c286198"
+      },
+      "teacher": {
+        "check_foot_clearance_cpu.py": "64bfe8bb2445d133d25a69e6e3da96b07830aede7988169bb652749c570c9c1d",
+        "check_planned_baseline.py": "854784ebeeb08de98e24298a86ee81351962473cb2218967b23eb068144b6049",
+        "check_reference_goal_contract.py": "6ad7e87a3761cacc545e7524d14901b64bef99956108b24e96216c3c957f703c",
+        "check_surface_curriculum.py": "6d0afb88279a09aa1503b180f0872ad60d43b1a2b4bbc5ad07d5fe01c084f132",
+        "check_surface_migration.py": "96d5ac03a3d787be1cfa2e52708f15e519e7d50d339c5734fd52307a87fd4a41",
+        "check_surface_student_eval.py": "2872d693ab01caa56293f130aa24788958da6f47bccd67152aa991c89eb3a4a1",
+        "check_surface_student_pilot.py": "ab18829bf7e0c26647eb4946837acdda9d81d7ca4ae07d9a949ab9370d1a5f6b",
+        "check_surface_task.py": "92aacb490cf68041ef91e57c4121ea0caff711ec6942c3b8bcfa336ca051918b",
+        "collect.py": "7012f0f7a535a93af2c6d4a225b1883ab95612a52044e90973454fd8c10338c7",
+        "collect_recovery.py": "03ea20daff7c119901df12e78e7c9e808c594ef939eaea14c0a5293a393d4695",
+        "collection_sampling.py": "a81c618e9df47c1088d0580eedc598b52f28d049d0b3e5e68c363f2be0758ffa",
+        "entry.py": "68bb90c8f64fa3d4e44ea3af8f4617b3b907b93d1e793c88a2542b6f6b2a9ffa",
+        "floor_geometry.py": "8b22904931ef93ca70f2820ebd3b50a75333332bc8c3d093ab201fc48e4a24dc",
+        "foot_clearance.py": "8a493da8de7dabb30916f136e09bfd02a4f62ac98fb2d6ec25801177f7f4f801",
+        "launch.sh": "a3284f5c50c84c8f43b8fa3c480d9e104a87414c8310a1c4a29455e89070419d",
+        "migrate_warm_checkpoint.py": "e997a915dc4b3df2939eed43dfbd727f91d668a1e8dad2d8fe9d45bcd88e45d8",
+        "motion_reference.py": "510098df8baa3a6bb74b9c0ee103db5bb413056d3eced57ec5062eca04a56388",
+        "official_tracker.py": "df5afcda25889f6693dbe2382f89d193cbcbc88e5b1b54616992e1b76930bbd1",
+        "prepare_planned_baseline.py": "52a2cad1b975356ca492ba9acbb263c6ed69e1628f90d845bef0b228c89c2c6d",
+        "prepare_planned_evaluation.py": "215f8a7eb207cafecb70929eec1efdd26490b194bef56a338b42876bae5930a5",
+        "prepare_surface_student_eval.py": "3f2a522467bd8b584a1e3a280dc789701129663c58449cf4193ee7db1bbc0d3a",
+        "prepare_surface_student_pilot.py": "a61016aa6bb9eb6d024f50026c9f297bbd5ce194013beb8f635ef957e8fc214b",
+        "recovery_runtime.py": "136822749bf4f15b952e04eae7b96c2ab17be943df7dc23078c118b3e8f00cfa",
+        "reference_goal_contract.py": "816534ae172c1f0b0c36a7c9760bab146c4a8728e74e6ec7852ffb7437ee0f3d",
+        "reference_terrain_fix.py": "bcfc60554a6568b6509ebc8a8a5bf19ebdd2bf3a21b56e328748ae9192567197",
+        "run_surface_cycles.py": "68f5dc867c414882b013aa2502f836cc572090925c438e0d7521bb7caeb374e5",
+        "scene_adapter.py": "20abf9faf9681655a0eded0db991df5918de1b4a928195f64bea414f948fcefd",
+        "scene_heightmap.py": "e22247eab4586a7ad81fe9e5fbd53613da417618a680517a6a41c488957f2a04",
+        "surface_contract.py": "3584d227687fad440f6f464194763c080f75e3401ed6a59df4c4bdc0f2e391cf",
+        "surface_curriculum.py": "1eda44d12fb16f3ef3a78ece9d4594342015b14c8cbfa3a727665d2086d03321",
+        "teacher.py": "d50e7517a44dbf7f6948c12f2d254bf4362aca57d30d368e3e06208b9f5a7416",
+        "teacher_factory.py": "0fb3217ff9e9823af328b4289c60cdc6a78b81c19b07c92fe9dbabac988be953",
+        "v5_task.py": "40deaac3914a1c5d753be905fdba3f72603b04ba759cb2751c32bddc810857e6",
+        "warm_policy.py": "c5861c7e952b63dacd3416db3fd2475c761dd75c1ba2f7ba38569cb96e3e296b",
+        "warm_ppo.py": "82f7b38db6cd4c3043eabf54d1d357f8dd146bbe19aafde102fd803ec3c3fd6e",
+        "warm_prior.py": "48390b278554bbb1f4ed7853e3a157274da1a31c0ed3931fb29c225776112325",
+        "warm_runtime.py": "aaf1f8c5db2b22f266630df63e4d128c3124fc299d3d75ef854fc21b20f165da",
+        "warm_task.py": "428bfd22d5a0aa27213525c064aabb7d16c5810614778a83cb449aa10e7285d5",
+        "warm_task_base.py": "21c9703b375a0bcfd25b28951d163220b6b278e92d8360606cec698047c238ab"
+      }
+    }
+  },
+  "dev": {
+    "status": "complete",
+    "qualified": true,
+    "summary_file": {
+      "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/summary.json",
+      "sha256": "a4a7a08851c9db428ea0807a438075c4383dcfe63af255d0c8a9c82093a9dc06"
+    },
+    "summary": {
+      "0.0": {
+        "total": 40,
+        "success": 38,
+        "fall": 2,
+        "forbid": 0,
+        "timeout": 0,
+        "timeout_inferred": 0
+      },
+      "0.45": {
+        "total": 40,
+        "success": 33,
+        "fall": 0,
+        "forbid": 7,
+        "timeout": 0,
+        "timeout_inferred": 0
+      },
+      "0.75": {
+        "total": 40,
+        "success": 27,
+        "fall": 5,
+        "forbid": 8,
+        "timeout": 0,
+        "timeout_inferred": 0
+      }
+    },
+    "required_successes": {
+      "0.0": 38,
+      "0.45": 32,
+      "0.75": 24
+    },
+    "per_source": {
+      "011723": {
+        "files": {
+          "config": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/011723/config.json",
+            "sha256": "930a2905e3dee9df3980ab754eb11127937b990efdbecf2a0328371fe7f15fab"
+          },
+          "prepared": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/011723/prepared_evaluation.json",
+            "sha256": "625cd7d6495e880d0b1f10d0501a2e036e6e3a838614048b51232074028279f2"
+          },
+          "evaluation": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/011723/evaluation/evaluation.json",
+            "sha256": "d0675c8a5738cb0858b992663884b434e0e2b2c70fe97a5f15fe9920abce2186"
+          },
+          "student_provenance": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/011723/evaluation/student_provenance.json",
+            "sha256": "1bee3027ee84b6dd8a93d6f987f1068579ae59f3813d167a9c604fbddf30e6fd"
+          },
+          "goal_contract": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/011723/evaluation/reference_goal_contract.json",
+            "sha256": "b21f0b7885d5594aa4249fb88d9fea1eb1043bf87c3eb0e24069aac6ec5d92b8"
+          }
+        },
+        "summary": {
+          "0.0": {
+            "total": 8,
+            "success": 6,
+            "fall": 2,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.45": {
+            "total": 8,
+            "success": 7,
+            "fall": 0,
+            "forbid": 1,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.75": {
+            "total": 8,
+            "success": 4,
+            "fall": 3,
+            "forbid": 1,
+            "timeout": 0,
+            "timeout_inferred": 0
+          }
+        },
+        "latency": {
+          "residual_model_latency_ms": {
+            "p50": 1.6566395061090589,
+            "p95": 1.7050569877028465,
+            "num_envs": 24
+          },
+          "tracker_plus_residual_model_latency_ms": {
+            "p50": 2.5143016828224063,
+            "p95": 2.5881770998239517,
+            "num_envs": 24
+          }
+        },
+        "goal_contract": {
+          "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+          "original_bank_sha256": "d91001c8f3080de5a8adb13a09a803fcdb73b33a033755d41ee5450037e013d2",
+          "planned_bank_sha256": "d91001c8f3080de5a8adb13a09a803fcdb73b33a033755d41ee5450037e013d2",
+          "reference_plan_status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+          "sources": [
+            {
+              "plan_version": "goal_preserving_xy_reference_shift_v1",
+              "parameters": {
+                "clearance_m": 0.1,
+                "maximum_xy_shift_m": 0.15,
+                "transition_seconds": 1.0,
+                "floor_gap_change_limit_m": 0.01,
+                "original_near_ground_corner_gap_m": 0.02,
+                "minimum_path_clearance_m": 0.005,
+                "geometry_samples_per_frame": 4,
+                "original_goal_radius_m": 0.35,
+                "original_target_polygon_distance_m": 0.8
+              },
+              "source_id": "011723",
+              "source_frames": 92,
+              "total_frames": 242,
+              "motion_dt": 0.03333333507180214,
+              "motion_length": 8.033333778381348,
+              "original_goal_world_in_scene": [
+                2.376584529876709,
+                0.8691277503967285,
+                0.9170323014259338
+              ],
+              "original_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                1.1497713327407837
+              ],
+              "original_v5_support_height_start_end_m": [
+                0.23125995695590973,
+                -0.009336709976196289
+              ],
+              "placement_rule": "raw.xy + motion_to_world_translation.xy; raw.z + floor_height[argmax(floor_height - raw_foot_z)] at each sampled frame; no spawn-Z added",
+              "original_terminal_min_collider_aabb_gap_m": 0.18029884519602654,
+              "metric": "Euclidean separation of enclosing collider AABBs to forbidden AABB: conservative lower bound, not exact mesh gap",
+              "unchanged_joint_fields": [
+                "grs",
+                "gavs",
+                "dps",
+                "dvs",
+                "lrs",
+                "contacts"
+              ],
+              "original_hard_stop_retained": true,
+              "candidate_reports": [],
+              "geometry_qualified": true,
+              "experimental_export": false,
+              "floor_proxy_warning_requested": true,
+              "geometry_qualification_version": "relative_observability_true_near_ground_corners_v2",
+              "candidate_selection": "single_minimum_norm_analytic_shift_no_fallback",
+              "status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+              "delta_xy_m": [
+                0.0,
+                0.0
+              ],
+              "reference_shift_begin_frame": 61,
+              "reference_shift_complete_frame": 91,
+              "planned_reference_goal_world_in_scene": [
+                2.376584529876709,
+                0.8691277503967285,
+                0.9170323014259338
+              ],
+              "planned_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                1.1497713327407837
+              ],
+              "planned_v5_support_height_start_end_m": [
+                0.23125995695590973,
+                -0.009336709976196289
+              ],
+              "planned_terminal_min_collider_aabb_gap_m": 0.18029884519602654,
+              "original_goal_preserved_by_runtime_contract": true,
+              "maximum_added_reference_speed_m_s": 0.0,
+              "max_root_v5_height_change_m": 0.0,
+              "max_added_v5_height_step_m": 0.0,
+              "evaluation_status": "NOT_RUN"
+            }
+          ]
+        },
+        "cases": [
+          {
+            "key": [
+              "011723",
+              0.0,
+              0,
+              0.3
+            ],
+            "success": false,
+            "fall": true,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 104
+          },
+          {
+            "key": [
+              "011723",
+              0.0,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "011723",
+              0.0,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 140
+          },
+          {
+            "key": [
+              "011723",
+              0.0,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 196
+          },
+          {
+            "key": [
+              "011723",
+              0.0,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 134
+          },
+          {
+            "key": [
+              "011723",
+              0.0,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 168
+          },
+          {
+            "key": [
+              "011723",
+              0.0,
+              3,
+              0.3
+            ],
+            "success": false,
+            "fall": true,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 127
+          },
+          {
+            "key": [
+              "011723",
+              0.0,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 131
+          },
+          {
+            "key": [
+              "011723",
+              0.45,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 129
+          },
+          {
+            "key": [
+              "011723",
+              0.45,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 131
+          },
+          {
+            "key": [
+              "011723",
+              0.45,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 134
+          },
+          {
+            "key": [
+              "011723",
+              0.45,
+              1,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 65
+          },
+          {
+            "key": [
+              "011723",
+              0.45,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 131
+          },
+          {
+            "key": [
+              "011723",
+              0.45,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 126
+          },
+          {
+            "key": [
+              "011723",
+              0.45,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 133
+          },
+          {
+            "key": [
+              "011723",
+              0.45,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "011723",
+              0.75,
+              0,
+              0.3
+            ],
+            "success": false,
+            "fall": true,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 105
+          },
+          {
+            "key": [
+              "011723",
+              0.75,
+              0,
+              0.6
+            ],
+            "success": false,
+            "fall": true,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 80
+          },
+          {
+            "key": [
+              "011723",
+              0.75,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 152
+          },
+          {
+            "key": [
+              "011723",
+              0.75,
+              1,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 74
+          },
+          {
+            "key": [
+              "011723",
+              0.75,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 133
+          },
+          {
+            "key": [
+              "011723",
+              0.75,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 190
+          },
+          {
+            "key": [
+              "011723",
+              0.75,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 139
+          },
+          {
+            "key": [
+              "011723",
+              0.75,
+              3,
+              0.6
+            ],
+            "success": false,
+            "fall": true,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 72
+          }
+        ]
+      },
+      "015317": {
+        "files": {
+          "config": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015317/config.json",
+            "sha256": "5cefec11b83d8c5d875d19f4910ab8f10f755664cb1fbbd80ac8e19a21cf041c"
+          },
+          "prepared": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015317/prepared_evaluation.json",
+            "sha256": "e338d3f8f833c7e70cbde901d3b4b6c6653df72b56b0545e292bee41670dca2b"
+          },
+          "evaluation": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015317/evaluation/evaluation.json",
+            "sha256": "3038ba58b466df664930e60aec0bfb7d38c98b7cc65b6b418a9d14cc2e5b15d5"
+          },
+          "student_provenance": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015317/evaluation/student_provenance.json",
+            "sha256": "511186eba3373357fd9b43c5eba2f272aeca80b6933d1f891550cb683533d9de"
+          },
+          "goal_contract": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015317/evaluation/reference_goal_contract.json",
+            "sha256": "8d36112e2679431130ca68f9fff2bd52084b888dd7369f43e43808f12489b5ce"
+          }
+        },
+        "summary": {
+          "0.0": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.45": {
+            "total": 8,
+            "success": 6,
+            "fall": 0,
+            "forbid": 2,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.75": {
+            "total": 8,
+            "success": 5,
+            "fall": 0,
+            "forbid": 3,
+            "timeout": 0,
+            "timeout_inferred": 0
+          }
+        },
+        "latency": {
+          "residual_model_latency_ms": {
+            "p50": 1.6750774811953306,
+            "p95": 1.7329955007880926,
+            "num_envs": 24
+          },
+          "tracker_plus_residual_model_latency_ms": {
+            "p50": 2.5408596266061068,
+            "p95": 2.6103714015334845,
+            "num_envs": 24
+          }
+        },
+        "goal_contract": {
+          "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+          "original_bank_sha256": "5449bf689a3372539d14c849b53c5efc985f9bd62863f5d20a86e095f2d5e795",
+          "planned_bank_sha256": "5449bf689a3372539d14c849b53c5efc985f9bd62863f5d20a86e095f2d5e795",
+          "reference_plan_status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+          "sources": [
+            {
+              "plan_version": "goal_preserving_xy_reference_shift_v1",
+              "parameters": {
+                "clearance_m": 0.1,
+                "maximum_xy_shift_m": 0.15,
+                "transition_seconds": 1.0,
+                "floor_gap_change_limit_m": 0.01,
+                "original_near_ground_corner_gap_m": 0.02,
+                "minimum_path_clearance_m": 0.005,
+                "geometry_samples_per_frame": 4,
+                "original_goal_radius_m": 0.35,
+                "original_target_polygon_distance_m": 0.8
+              },
+              "source_id": "015317",
+              "source_frames": 71,
+              "total_frames": 221,
+              "motion_dt": 0.03333333507180214,
+              "motion_length": 7.333333492279053,
+              "original_goal_world_in_scene": [
+                -2.198697090148926,
+                -0.24025177955627441,
+                0.9656435251235962
+              ],
+              "original_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.8805533647537231
+              ],
+              "original_v5_support_height_start_end_m": [
+                -0.02903558872640133,
+                0.04814289137721062
+              ],
+              "placement_rule": "raw.xy + motion_to_world_translation.xy; raw.z + floor_height[argmax(floor_height - raw_foot_z)] at each sampled frame; no spawn-Z added",
+              "original_terminal_min_collider_aabb_gap_m": 0.2756048259532048,
+              "metric": "Euclidean separation of enclosing collider AABBs to forbidden AABB: conservative lower bound, not exact mesh gap",
+              "unchanged_joint_fields": [
+                "grs",
+                "gavs",
+                "dps",
+                "dvs",
+                "lrs",
+                "contacts"
+              ],
+              "original_hard_stop_retained": true,
+              "candidate_reports": [],
+              "geometry_qualified": true,
+              "experimental_export": false,
+              "floor_proxy_warning_requested": true,
+              "geometry_qualification_version": "relative_observability_true_near_ground_corners_v2",
+              "candidate_selection": "single_minimum_norm_analytic_shift_no_fallback",
+              "status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+              "delta_xy_m": [
+                0.0,
+                0.0
+              ],
+              "reference_shift_begin_frame": 40,
+              "reference_shift_complete_frame": 70,
+              "planned_reference_goal_world_in_scene": [
+                -2.198697090148926,
+                -0.24025177955627441,
+                0.9656435251235962
+              ],
+              "planned_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.8805533647537231
+              ],
+              "planned_v5_support_height_start_end_m": [
+                -0.02903558872640133,
+                0.04814289137721062
+              ],
+              "planned_terminal_min_collider_aabb_gap_m": 0.27560482595320474,
+              "original_goal_preserved_by_runtime_contract": true,
+              "maximum_added_reference_speed_m_s": 0.0,
+              "max_root_v5_height_change_m": 0.0,
+              "max_added_v5_height_step_m": 0.0,
+              "evaluation_status": "NOT_RUN"
+            }
+          ]
+        },
+        "cases": [
+          {
+            "key": [
+              "015317",
+              0.0,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.0,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 108
+          },
+          {
+            "key": [
+              "015317",
+              0.0,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.0,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 108
+          },
+          {
+            "key": [
+              "015317",
+              0.0,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.0,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 108
+          },
+          {
+            "key": [
+              "015317",
+              0.0,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.0,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 108
+          },
+          {
+            "key": [
+              "015317",
+              0.45,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.45,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 108
+          },
+          {
+            "key": [
+              "015317",
+              0.45,
+              1,
+              0.3
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 50
+          },
+          {
+            "key": [
+              "015317",
+              0.45,
+              1,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 50
+          },
+          {
+            "key": [
+              "015317",
+              0.45,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.45,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 112
+          },
+          {
+            "key": [
+              "015317",
+              0.45,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.45,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015317",
+              0.75,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.75,
+              0,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 53
+          },
+          {
+            "key": [
+              "015317",
+              0.75,
+              1,
+              0.3
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 52
+          },
+          {
+            "key": [
+              "015317",
+              0.75,
+              1,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 51
+          },
+          {
+            "key": [
+              "015317",
+              0.75,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.75,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 108
+          },
+          {
+            "key": [
+              "015317",
+              0.75,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 100
+          },
+          {
+            "key": [
+              "015317",
+              0.75,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 108
+          }
+        ]
+      },
+      "015542": {
+        "files": {
+          "config": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015542/config.json",
+            "sha256": "d9348b21dc7c8c39fbb30b82b05d3d52a956685a1c840ba2c9d6e4ab5ce56144"
+          },
+          "prepared": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015542/prepared_evaluation.json",
+            "sha256": "14bcdaea7e833909ee2192230f78771c73f4afec6b9e72b215d0087e9440d333"
+          },
+          "evaluation": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015542/evaluation/evaluation.json",
+            "sha256": "f33a7ad6bf046392742365b89be85a66db181b6459d6578f8ba5f5d7e5b6393e"
+          },
+          "student_provenance": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015542/evaluation/student_provenance.json",
+            "sha256": "226848fbba16c199da1e81d1b4f23d999b0bc8a71f0062f1d4e52719753ac2c3"
+          },
+          "goal_contract": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015542/evaluation/reference_goal_contract.json",
+            "sha256": "63cea2b5b54cc62a0b4ea19d42189361331bce43100543d6f711c5cec4232a34"
+          }
+        },
+        "summary": {
+          "0.0": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.45": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.75": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          }
+        },
+        "latency": {
+          "residual_model_latency_ms": {
+            "p50": 1.6564320540055633,
+            "p95": 1.6937686246819794,
+            "num_envs": 24
+          },
+          "tracker_plus_residual_model_latency_ms": {
+            "p50": 2.5138005148619413,
+            "p95": 2.555181900970638,
+            "num_envs": 24
+          }
+        },
+        "goal_contract": {
+          "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+          "original_bank_sha256": "c505111ef2729617bace05c63cd9637db6d5b34e7b4806dcbeee65bdb10ecbf0",
+          "planned_bank_sha256": "c505111ef2729617bace05c63cd9637db6d5b34e7b4806dcbeee65bdb10ecbf0",
+          "reference_plan_status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+          "sources": [
+            {
+              "plan_version": "goal_preserving_xy_reference_shift_v1",
+              "parameters": {
+                "clearance_m": 0.1,
+                "maximum_xy_shift_m": 0.15,
+                "transition_seconds": 1.0,
+                "floor_gap_change_limit_m": 0.01,
+                "original_near_ground_corner_gap_m": 0.02,
+                "minimum_path_clearance_m": 0.005,
+                "geometry_samples_per_frame": 4,
+                "original_goal_radius_m": 0.35,
+                "original_target_polygon_distance_m": 0.8
+              },
+              "source_id": "015542",
+              "source_frames": 103,
+              "total_frames": 253,
+              "motion_dt": 0.03333333507180214,
+              "motion_length": 8.40000057220459,
+              "original_goal_world_in_scene": [
+                -1.5898962020874023,
+                0.5589257478713989,
+                0.8943700194358826
+              ],
+              "original_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.7814540863037109
+              ],
+              "original_v5_support_height_start_end_m": [
+                -0.13581398129463196,
+                -0.03302139416337013
+              ],
+              "placement_rule": "raw.xy + motion_to_world_translation.xy; raw.z + floor_height[argmax(floor_height - raw_foot_z)] at each sampled frame; no spawn-Z added",
+              "original_terminal_min_collider_aabb_gap_m": 1.1524640785255746,
+              "metric": "Euclidean separation of enclosing collider AABBs to forbidden AABB: conservative lower bound, not exact mesh gap",
+              "unchanged_joint_fields": [
+                "grs",
+                "gavs",
+                "dps",
+                "dvs",
+                "lrs",
+                "contacts"
+              ],
+              "original_hard_stop_retained": true,
+              "candidate_reports": [],
+              "geometry_qualified": true,
+              "experimental_export": false,
+              "floor_proxy_warning_requested": true,
+              "geometry_qualification_version": "relative_observability_true_near_ground_corners_v2",
+              "candidate_selection": "single_minimum_norm_analytic_shift_no_fallback",
+              "status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+              "delta_xy_m": [
+                0.0,
+                0.0
+              ],
+              "reference_shift_begin_frame": 72,
+              "reference_shift_complete_frame": 102,
+              "planned_reference_goal_world_in_scene": [
+                -1.5898962020874023,
+                0.5589257478713989,
+                0.8943700194358826
+              ],
+              "planned_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.7814540863037109
+              ],
+              "planned_v5_support_height_start_end_m": [
+                -0.13581398129463196,
+                -0.03302139416337013
+              ],
+              "planned_terminal_min_collider_aabb_gap_m": 1.1524640785255744,
+              "original_goal_preserved_by_runtime_contract": true,
+              "maximum_added_reference_speed_m_s": 0.0,
+              "max_root_v5_height_change_m": 0.0,
+              "max_added_v5_height_step_m": 0.0,
+              "evaluation_status": "NOT_RUN"
+            }
+          ]
+        },
+        "cases": [
+          {
+            "key": [
+              "015542",
+              0.0,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.0,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.0,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.0,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.0,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.0,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.0,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.0,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.45,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.45,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.45,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.45,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.45,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.45,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 133
+          },
+          {
+            "key": [
+              "015542",
+              0.45,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.45,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.75,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.75,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.75,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.75,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 134
+          },
+          {
+            "key": [
+              "015542",
+              0.75,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.75,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.75,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          },
+          {
+            "key": [
+              "015542",
+              0.75,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 132
+          }
+        ]
+      },
+      "015547": {
+        "files": {
+          "config": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015547/config.json",
+            "sha256": "6f28c85b833cc2508036e92d073c037cf047fdb207d035386ea7aa95a77abc30"
+          },
+          "prepared": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015547/prepared_evaluation.json",
+            "sha256": "d43f441c6aa456957c3dd27dc05e1ba3e921d404bb8d7880a63f8dacaa6f525a"
+          },
+          "evaluation": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015547/evaluation/evaluation.json",
+            "sha256": "4a3e59754a3dfcf22fef55158f505bcdc5c584e72447bba70f9ca2fa3911a409"
+          },
+          "student_provenance": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015547/evaluation/student_provenance.json",
+            "sha256": "0ed9076f4786566712d2d43717f020fb6f525e890fae12ec0af6f8adad56751a"
+          },
+          "goal_contract": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015547/evaluation/reference_goal_contract.json",
+            "sha256": "11194a777ce7149adb74e67bcbb70bfb26716434806763e4b55105aab2887da1"
+          }
+        },
+        "summary": {
+          "0.0": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.45": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.75": {
+            "total": 8,
+            "success": 6,
+            "fall": 2,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          }
+        },
+        "latency": {
+          "residual_model_latency_ms": {
+            "p50": 1.6635849606245756,
+            "p95": 1.8531435634940856,
+            "num_envs": 24
+          },
+          "tracker_plus_residual_model_latency_ms": {
+            "p50": 2.520292764529586,
+            "p95": 2.7326308190822597,
+            "num_envs": 24
+          }
+        },
+        "goal_contract": {
+          "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+          "original_bank_sha256": "59dfff4bbaead1f67399a934ff53bdad9e3d37bfbd7f11dd5bdfba718760125b",
+          "planned_bank_sha256": "59dfff4bbaead1f67399a934ff53bdad9e3d37bfbd7f11dd5bdfba718760125b",
+          "reference_plan_status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+          "sources": [
+            {
+              "plan_version": "goal_preserving_xy_reference_shift_v1",
+              "parameters": {
+                "clearance_m": 0.1,
+                "maximum_xy_shift_m": 0.15,
+                "transition_seconds": 1.0,
+                "floor_gap_change_limit_m": 0.01,
+                "original_near_ground_corner_gap_m": 0.02,
+                "minimum_path_clearance_m": 0.005,
+                "geometry_samples_per_frame": 4,
+                "original_goal_radius_m": 0.35,
+                "original_target_polygon_distance_m": 0.8
+              },
+              "source_id": "015547",
+              "source_frames": 78,
+              "total_frames": 228,
+              "motion_dt": 0.03333333507180214,
+              "motion_length": 7.566667079925537,
+              "original_goal_world_in_scene": [
+                1.2982656955718994,
+                2.261000633239746,
+                0.9460189342498779
+              ],
+              "original_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.9051353931427002
+              ],
+              "original_v5_support_height_start_end_m": [
+                0.017207717522978783,
+                0.013491260819137096
+              ],
+              "placement_rule": "raw.xy + motion_to_world_translation.xy; raw.z + floor_height[argmax(floor_height - raw_foot_z)] at each sampled frame; no spawn-Z added",
+              "original_terminal_min_collider_aabb_gap_m": 0.4003456917633663,
+              "metric": "Euclidean separation of enclosing collider AABBs to forbidden AABB: conservative lower bound, not exact mesh gap",
+              "unchanged_joint_fields": [
+                "grs",
+                "gavs",
+                "dps",
+                "dvs",
+                "lrs",
+                "contacts"
+              ],
+              "original_hard_stop_retained": true,
+              "candidate_reports": [],
+              "geometry_qualified": true,
+              "experimental_export": false,
+              "floor_proxy_warning_requested": true,
+              "geometry_qualification_version": "relative_observability_true_near_ground_corners_v2",
+              "candidate_selection": "single_minimum_norm_analytic_shift_no_fallback",
+              "status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+              "delta_xy_m": [
+                0.0,
+                0.0
+              ],
+              "reference_shift_begin_frame": 47,
+              "reference_shift_complete_frame": 77,
+              "planned_reference_goal_world_in_scene": [
+                1.2982656955718994,
+                2.261000633239746,
+                0.9460189342498779
+              ],
+              "planned_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.9051353931427002
+              ],
+              "planned_v5_support_height_start_end_m": [
+                0.017207717522978783,
+                0.013491260819137096
+              ],
+              "planned_terminal_min_collider_aabb_gap_m": 0.4003456917633663,
+              "original_goal_preserved_by_runtime_contract": true,
+              "maximum_added_reference_speed_m_s": 0.0,
+              "max_root_v5_height_change_m": 0.0,
+              "max_added_v5_height_step_m": 0.0,
+              "evaluation_status": "NOT_RUN"
+            }
+          ]
+        },
+        "cases": [
+          {
+            "key": [
+              "015547",
+              0.0,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.0,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 112
+          },
+          {
+            "key": [
+              "015547",
+              0.0,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.0,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 112
+          },
+          {
+            "key": [
+              "015547",
+              0.0,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.0,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 112
+          },
+          {
+            "key": [
+              "015547",
+              0.0,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.0,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 112
+          },
+          {
+            "key": [
+              "015547",
+              0.45,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.45,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "015547",
+              0.45,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.45,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 123
+          },
+          {
+            "key": [
+              "015547",
+              0.45,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.45,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 112
+          },
+          {
+            "key": [
+              "015547",
+              0.45,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.45,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 112
+          },
+          {
+            "key": [
+              "015547",
+              0.75,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 108
+          },
+          {
+            "key": [
+              "015547",
+              0.75,
+              0,
+              0.6
+            ],
+            "success": false,
+            "fall": true,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 62
+          },
+          {
+            "key": [
+              "015547",
+              0.75,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015547",
+              0.75,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 112
+          },
+          {
+            "key": [
+              "015547",
+              0.75,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 107
+          },
+          {
+            "key": [
+              "015547",
+              0.75,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "015547",
+              0.75,
+              3,
+              0.3
+            ],
+            "success": false,
+            "fall": true,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 52
+          },
+          {
+            "key": [
+              "015547",
+              0.75,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 145
+          }
+        ]
+      },
+      "015571": {
+        "files": {
+          "config": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015571/config.json",
+            "sha256": "001e0d3bde605202d6b5acf592fcca377bf6df97160f022da5b8792f9c737ffc"
+          },
+          "prepared": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015571/prepared_evaluation.json",
+            "sha256": "f786a39e5fe2f90abb09a233bda7d8921ea94394599775205c66541ab3a0ba38"
+          },
+          "evaluation": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015571/evaluation/evaluation.json",
+            "sha256": "35fe4583c90af03d733b0c29b9c94b0f4eea6450c03d0af7544a4c1597f9c2b8"
+          },
+          "student_provenance": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015571/evaluation/student_provenance.json",
+            "sha256": "1e6734e62545e91cc522633534baeab665a865285d254a0a6396ea975f01b7b8"
+          },
+          "goal_contract": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_dev/015571/evaluation/reference_goal_contract.json",
+            "sha256": "eabbe25bfd285f286909aee37bb0695bc2e7fc9b3f62421828e3ab063acb7719"
+          }
+        },
+        "summary": {
+          "0.0": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.45": {
+            "total": 8,
+            "success": 4,
+            "fall": 0,
+            "forbid": 4,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.75": {
+            "total": 8,
+            "success": 4,
+            "fall": 0,
+            "forbid": 4,
+            "timeout": 0,
+            "timeout_inferred": 0
+          }
+        },
+        "latency": {
+          "residual_model_latency_ms": {
+            "p50": 1.4991784701123834,
+            "p95": 1.5508159878663716,
+            "num_envs": 24
+          },
+          "tracker_plus_residual_model_latency_ms": {
+            "p50": 2.322950982488692,
+            "p95": 2.401272230781615,
+            "num_envs": 24
+          }
+        },
+        "goal_contract": {
+          "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+          "original_bank_sha256": "575fb80fea031b21f294887c1d61e5e787625d96ff4d38353c4402ee86410f60",
+          "planned_bank_sha256": "ef0710162a09c5778f78b9097517834097f5a3908aca843bc23ccdb0ab28dfa2",
+          "reference_plan_status": "PROPOSED_FOR_PHYSICS_WITH_FLOOR_PROXY_WARNING",
+          "sources": [
+            {
+              "plan_version": "goal_preserving_xy_reference_shift_v1",
+              "parameters": {
+                "clearance_m": 0.1,
+                "maximum_xy_shift_m": 0.15,
+                "transition_seconds": 1.0,
+                "floor_gap_change_limit_m": 0.01,
+                "original_near_ground_corner_gap_m": 0.02,
+                "minimum_path_clearance_m": 0.005,
+                "geometry_samples_per_frame": 4,
+                "original_goal_radius_m": 0.35,
+                "original_target_polygon_distance_m": 0.8
+              },
+              "source_id": "015571",
+              "source_frames": 73,
+              "total_frames": 223,
+              "motion_dt": 0.03333333507180214,
+              "motion_length": 7.40000057220459,
+              "original_goal_world_in_scene": [
+                -1.4439036846160889,
+                -0.3926081657409668,
+                0.8868412971496582
+              ],
+              "original_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                1.1364376544952393
+              ],
+              "original_v5_support_height_start_end_m": [
+                0.21254095435142517,
+                -0.041179630905389786
+              ],
+              "placement_rule": "raw.xy + motion_to_world_translation.xy; raw.z + floor_height[argmax(floor_height - raw_foot_z)] at each sampled frame; no spawn-Z added",
+              "original_terminal_min_collider_aabb_gap_m": 0.01950433902635912,
+              "metric": "Euclidean separation of enclosing collider AABBs to forbidden AABB: conservative lower bound, not exact mesh gap",
+              "unchanged_joint_fields": [
+                "grs",
+                "gavs",
+                "dps",
+                "dvs",
+                "lrs",
+                "contacts"
+              ],
+              "original_hard_stop_retained": true,
+              "candidate_reports": [
+                {
+                  "delta_xy_m": [
+                    0.0,
+                    -0.08494588776461498
+                  ],
+                  "norm_m": 0.08494588776461498,
+                  "axis": 1,
+                  "sign": -1,
+                  "reasons": [
+                    "changed_near_ground_corner_support_clearance_over_1cm"
+                  ],
+                  "terminal_min_collider_aabb_gap_m": 0.100766059854699,
+                  "changed_path_min_collider_aabb_gap_m": 0.100766059854699,
+                  "max_foot_floor_gap_change_m": 0.015174027532339096,
+                  "max_near_ground_corner_floor_gap_change_m": 0.01071169413626194,
+                  "original_near_ground_corner_samples": 3131,
+                  "original_unobserved_floor_samples": 1914,
+                  "unobserved_floor_samples": 7,
+                  "newly_unobserved_floor_samples": 0,
+                  "original_true_foot_corner_min_gap_m": -0.05075380902976531,
+                  "planned_true_foot_corner_min_gap_m": -0.04368868194395528,
+                  "target_polygon_distance_m": 0.26581968798261757,
+                  "support_index_changed_samples": 0,
+                  "legacy_conservative_body_floor_regression_samples": 18,
+                  "nonfoot_conservative_body_floor_regression_samples": 0,
+                  "proxy_warnings": [
+                    "existing_floor_missing_samples_retained_not_new",
+                    "swing_or_upper_corner_gap_change_exceeds_1cm",
+                    "foot_enclosing_aabb_floor_regression_not_true_sole_penetration"
+                  ]
+                }
+              ],
+              "geometry_qualified": false,
+              "experimental_export": true,
+              "floor_proxy_warning_requested": true,
+              "geometry_qualification_version": "relative_observability_true_near_ground_corners_v2",
+              "candidate_selection": "single_minimum_norm_analytic_shift_no_fallback",
+              "status": "PROPOSED_FOR_PHYSICS_WITH_FLOOR_PROXY_WARNING",
+              "selected_candidate": 0,
+              "delta_xy_m": [
+                0.0,
+                -0.08494588776461498
+              ],
+              "reference_shift_begin_frame": 42,
+              "reference_shift_complete_frame": 72,
+              "planned_reference_goal_world_in_scene": [
+                -1.4439036846160889,
+                -0.4775540828704834,
+                0.8818573355674744
+              ],
+              "planned_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                1.1364376544952393
+              ],
+              "planned_v5_support_height_start_end_m": [
+                0.21254095435142517,
+                -0.04616359993815422
+              ],
+              "planned_terminal_min_collider_aabb_gap_m": 0.100766059854699,
+              "original_goal_preserved_by_runtime_contract": true,
+              "maximum_added_reference_speed_m_s": 0.15927353125189112,
+              "max_root_v5_height_change_m": 0.0050611719489097595,
+              "max_added_v5_height_step_m": 0.0008668601512908936,
+              "evaluation_status": "NOT_RUN"
+            }
+          ]
+        },
+        "cases": [
+          {
+            "key": [
+              "015571",
+              0.0,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 102
+          },
+          {
+            "key": [
+              "015571",
+              0.0,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015571",
+              0.0,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 102
+          },
+          {
+            "key": [
+              "015571",
+              0.0,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015571",
+              0.0,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 104
+          },
+          {
+            "key": [
+              "015571",
+              0.0,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015571",
+              0.0,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 102
+          },
+          {
+            "key": [
+              "015571",
+              0.0,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015571",
+              0.45,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 102
+          },
+          {
+            "key": [
+              "015571",
+              0.45,
+              0,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 85
+          },
+          {
+            "key": [
+              "015571",
+              0.45,
+              1,
+              0.3
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 83
+          },
+          {
+            "key": [
+              "015571",
+              0.45,
+              1,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 81
+          },
+          {
+            "key": [
+              "015571",
+              0.45,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 102
+          },
+          {
+            "key": [
+              "015571",
+              0.45,
+              2,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 87
+          },
+          {
+            "key": [
+              "015571",
+              0.45,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 102
+          },
+          {
+            "key": [
+              "015571",
+              0.45,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 160
+          },
+          {
+            "key": [
+              "015571",
+              0.75,
+              0,
+              0.3
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 96
+          },
+          {
+            "key": [
+              "015571",
+              0.75,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 148
+          },
+          {
+            "key": [
+              "015571",
+              0.75,
+              1,
+              0.3
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 106
+          },
+          {
+            "key": [
+              "015571",
+              0.75,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "015571",
+              0.75,
+              2,
+              0.3
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 87
+          },
+          {
+            "key": [
+              "015571",
+              0.75,
+              2,
+              0.6
+            ],
+            "success": false,
+            "fall": false,
+            "forbid": true,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 53
+          },
+          {
+            "key": [
+              "015571",
+              0.75,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 102
+          },
+          {
+            "key": [
+              "015571",
+              0.75,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          }
+        ]
+      }
+    }
+  },
+  "validation": {
+    "status": "complete",
+    "qualified": true,
+    "summary_file": {
+      "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/summary.json",
+      "sha256": "017275d192f3ff443527c3599474dd08521850cfa1dd55e12171c21df32d9601"
+    },
+    "summary": {
+      "0.0": {
+        "total": 16,
+        "success": 16,
+        "fall": 0,
+        "forbid": 0,
+        "timeout": 0,
+        "timeout_inferred": 0
+      },
+      "0.45": {
+        "total": 16,
+        "success": 16,
+        "fall": 0,
+        "forbid": 0,
+        "timeout": 0,
+        "timeout_inferred": 0
+      },
+      "0.75": {
+        "total": 16,
+        "success": 16,
+        "fall": 0,
+        "forbid": 0,
+        "timeout": 0,
+        "timeout_inferred": 0
+      }
+    },
+    "required_successes": {
+      "0.0": 16,
+      "0.45": 13,
+      "0.75": 10
+    },
+    "per_source": {
+      "014810": {
+        "files": {
+          "config": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/014810/config.json",
+            "sha256": "0cf6e87b90791bbb5a2581702c27d07528d6327ba96238dc1b72faff0a4df8cc"
+          },
+          "prepared": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/014810/prepared_evaluation.json",
+            "sha256": "2904f16fe29bd0007b843148a1e6b56de0e348279b07457f9e57030a4aac77ef"
+          },
+          "evaluation": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/014810/evaluation/evaluation.json",
+            "sha256": "e98a53f3e38f0dd0df9dda647e77323608aa250effed0417815bc653f31db369"
+          },
+          "student_provenance": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/014810/evaluation/student_provenance.json",
+            "sha256": "39dd05831ace40ffd9d5390d9d1a414a8dea7f09a73262b95134cbb24d28fbf1"
+          },
+          "goal_contract": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/014810/evaluation/reference_goal_contract.json",
+            "sha256": "e1d8fcff3d023ec3fbfaa29d3b1d3376a4b62d66779effb5518e57833db0524d"
+          }
+        },
+        "summary": {
+          "0.0": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.45": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.75": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          }
+        },
+        "latency": {
+          "residual_model_latency_ms": {
+            "p50": 1.5582670457661152,
+            "p95": 1.5991195105016232,
+            "num_envs": 24
+          },
+          "tracker_plus_residual_model_latency_ms": {
+            "p50": 2.410450018942356,
+            "p95": 2.470511104911566,
+            "num_envs": 24
+          }
+        },
+        "goal_contract": {
+          "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+          "original_bank_sha256": "7af7aee19d425e4ed96be1a516b1c0a61f71b9ba411cff4b9b37f72c61aaecac",
+          "planned_bank_sha256": "7af7aee19d425e4ed96be1a516b1c0a61f71b9ba411cff4b9b37f72c61aaecac",
+          "reference_plan_status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+          "sources": [
+            {
+              "plan_version": "goal_preserving_xy_reference_shift_v1",
+              "parameters": {
+                "clearance_m": 0.1,
+                "maximum_xy_shift_m": 0.15,
+                "transition_seconds": 1.0,
+                "floor_gap_change_limit_m": 0.01,
+                "original_near_ground_corner_gap_m": 0.02,
+                "minimum_path_clearance_m": 0.005,
+                "geometry_samples_per_frame": 4,
+                "original_goal_radius_m": 0.35,
+                "original_target_polygon_distance_m": 0.8
+              },
+              "source_id": "014810",
+              "source_frames": 80,
+              "total_frames": 230,
+              "motion_dt": 0.03333333507180214,
+              "motion_length": 7.633333683013916,
+              "original_goal_world_in_scene": [
+                -1.5862009525299072,
+                1.409995198249817,
+                0.8595563769340515
+              ],
+              "original_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.9128134250640869
+              ],
+              "original_v5_support_height_start_end_m": [
+                -0.014767596498131752,
+                -0.04336287081241608
+              ],
+              "placement_rule": "raw.xy + motion_to_world_translation.xy; raw.z + floor_height[argmax(floor_height - raw_foot_z)] at each sampled frame; no spawn-Z added",
+              "original_terminal_min_collider_aabb_gap_m": 1.7698546727284536,
+              "metric": "Euclidean separation of enclosing collider AABBs to forbidden AABB: conservative lower bound, not exact mesh gap",
+              "unchanged_joint_fields": [
+                "grs",
+                "gavs",
+                "dps",
+                "dvs",
+                "lrs",
+                "contacts"
+              ],
+              "original_hard_stop_retained": true,
+              "candidate_reports": [],
+              "geometry_qualified": true,
+              "experimental_export": false,
+              "floor_proxy_warning_requested": true,
+              "geometry_qualification_version": "relative_observability_true_near_ground_corners_v2",
+              "candidate_selection": "single_minimum_norm_analytic_shift_no_fallback",
+              "status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+              "delta_xy_m": [
+                0.0,
+                0.0
+              ],
+              "reference_shift_begin_frame": 49,
+              "reference_shift_complete_frame": 79,
+              "planned_reference_goal_world_in_scene": [
+                -1.5862009525299072,
+                1.409995198249817,
+                0.8595563769340515
+              ],
+              "planned_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.9128134250640869
+              ],
+              "planned_v5_support_height_start_end_m": [
+                -0.014767596498131752,
+                -0.04336287081241608
+              ],
+              "planned_terminal_min_collider_aabb_gap_m": 1.7698546727284536,
+              "original_goal_preserved_by_runtime_contract": true,
+              "maximum_added_reference_speed_m_s": 0.0,
+              "max_root_v5_height_change_m": 0.0,
+              "max_added_v5_height_step_m": 0.0,
+              "evaluation_status": "NOT_RUN"
+            }
+          ]
+        },
+        "cases": [
+          {
+            "key": [
+              "014810",
+              0.0,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 111
+          },
+          {
+            "key": [
+              "014810",
+              0.0,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "014810",
+              0.0,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 111
+          },
+          {
+            "key": [
+              "014810",
+              0.0,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "014810",
+              0.0,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 111
+          },
+          {
+            "key": [
+              "014810",
+              0.0,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "014810",
+              0.0,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "014810",
+              0.0,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "014810",
+              0.45,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "014810",
+              0.45,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "014810",
+              0.45,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "014810",
+              0.45,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "014810",
+              0.45,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 110
+          },
+          {
+            "key": [
+              "014810",
+              0.45,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "014810",
+              0.45,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "014810",
+              0.45,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 115
+          },
+          {
+            "key": [
+              "014810",
+              0.75,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 109
+          },
+          {
+            "key": [
+              "014810",
+              0.75,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 115
+          },
+          {
+            "key": [
+              "014810",
+              0.75,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 113
+          },
+          {
+            "key": [
+              "014810",
+              0.75,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 114
+          },
+          {
+            "key": [
+              "014810",
+              0.75,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 113
+          },
+          {
+            "key": [
+              "014810",
+              0.75,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 125
+          },
+          {
+            "key": [
+              "014810",
+              0.75,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 110
+          },
+          {
+            "key": [
+              "014810",
+              0.75,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 116
+          }
+        ]
+      },
+      "015330": {
+        "files": {
+          "config": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/015330/config.json",
+            "sha256": "832b82404fc8165c76c138b7b8019d1cf0a96d10502303a47c34d0a73d4f36e7"
+          },
+          "prepared": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/015330/prepared_evaluation.json",
+            "sha256": "bbbbee8b2d9d17d8d05bd8a87347fe6c9bceb983c244c0f7dad4e87a9c638d14"
+          },
+          "evaluation": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/015330/evaluation/evaluation.json",
+            "sha256": "be34104484440a0ba6499a6355005d7ec5f74e8e6b1b3c4a187d0175a3ce2c41"
+          },
+          "student_provenance": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/015330/evaluation/student_provenance.json",
+            "sha256": "f5cafcae0831a6afe849e51f04313916ea9766f5b793c9eda6188c8f204dcfba"
+          },
+          "goal_contract": {
+            "path": "${PROJECT_ROOT}/reports/surface_h1_bc_validation/015330/evaluation/reference_goal_contract.json",
+            "sha256": "9973c8e6429021ff4af7923cbead667395744ee371d51d1619337a7b67596caa"
+          }
+        },
+        "summary": {
+          "0.0": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.45": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          },
+          "0.75": {
+            "total": 8,
+            "success": 8,
+            "fall": 0,
+            "forbid": 0,
+            "timeout": 0,
+            "timeout_inferred": 0
+          }
+        },
+        "latency": {
+          "residual_model_latency_ms": {
+            "p50": 1.5117260627448559,
+            "p95": 1.5646348474547267,
+            "num_envs": 24
+          },
+          "tracker_plus_residual_model_latency_ms": {
+            "p50": 2.341885818168521,
+            "p95": 2.3997834883630276,
+            "num_envs": 24
+          }
+        },
+        "goal_contract": {
+          "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+          "original_bank_sha256": "b89a7c070b6406fefe91d5ab19a5979c86ddc257f3b8d2d23d7b120916705b72",
+          "planned_bank_sha256": "b89a7c070b6406fefe91d5ab19a5979c86ddc257f3b8d2d23d7b120916705b72",
+          "reference_plan_status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+          "sources": [
+            {
+              "plan_version": "goal_preserving_xy_reference_shift_v1",
+              "parameters": {
+                "clearance_m": 0.1,
+                "maximum_xy_shift_m": 0.15,
+                "transition_seconds": 1.0,
+                "floor_gap_change_limit_m": 0.01,
+                "original_near_ground_corner_gap_m": 0.02,
+                "minimum_path_clearance_m": 0.005,
+                "geometry_samples_per_frame": 4,
+                "original_goal_radius_m": 0.35,
+                "original_target_polygon_distance_m": 0.8
+              },
+              "source_id": "015330",
+              "source_frames": 113,
+              "total_frames": 263,
+              "motion_dt": 0.03333333507180214,
+              "motion_length": 8.733333587646484,
+              "original_goal_world_in_scene": [
+                -2.9147088527679443,
+                -0.4534277319908142,
+                0.8755052089691162
+              ],
+              "original_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.7942506670951843
+              ],
+              "original_v5_support_height_start_end_m": [
+                -0.12335975468158722,
+                -0.05275294557213783
+              ],
+              "placement_rule": "raw.xy + motion_to_world_translation.xy; raw.z + floor_height[argmax(floor_height - raw_foot_z)] at each sampled frame; no spawn-Z added",
+              "original_terminal_min_collider_aabb_gap_m": 2.878613655144562,
+              "metric": "Euclidean separation of enclosing collider AABBs to forbidden AABB: conservative lower bound, not exact mesh gap",
+              "unchanged_joint_fields": [
+                "grs",
+                "gavs",
+                "dps",
+                "dvs",
+                "lrs",
+                "contacts"
+              ],
+              "original_hard_stop_retained": true,
+              "candidate_reports": [],
+              "geometry_qualified": true,
+              "experimental_export": false,
+              "floor_proxy_warning_requested": true,
+              "geometry_qualification_version": "relative_observability_true_near_ground_corners_v2",
+              "candidate_selection": "single_minimum_norm_analytic_shift_no_fallback",
+              "status": "IDENTITY_ORIGINAL_TERMINAL_GEOMETRY_CLEAR",
+              "delta_xy_m": [
+                0.0,
+                0.0
+              ],
+              "reference_shift_begin_frame": 82,
+              "reference_shift_complete_frame": 112,
+              "planned_reference_goal_world_in_scene": [
+                -2.9147088527679443,
+                -0.4534277319908142,
+                0.8755052089691162
+              ],
+              "planned_reference_start_world_in_scene": [
+                0.0,
+                0.0,
+                0.7942506670951843
+              ],
+              "planned_v5_support_height_start_end_m": [
+                -0.12335975468158722,
+                -0.05275294557213783
+              ],
+              "planned_terminal_min_collider_aabb_gap_m": 2.878613655144562,
+              "original_goal_preserved_by_runtime_contract": true,
+              "maximum_added_reference_speed_m_s": 0.0,
+              "max_root_v5_height_change_m": 0.0,
+              "max_added_v5_height_step_m": 0.0,
+              "evaluation_status": "NOT_RUN"
+            }
+          ]
+        },
+        "cases": [
+          {
+            "key": [
+              "015330",
+              0.0,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.0,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.0,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.0,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.0,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.0,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.0,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.0,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.45,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.45,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.45,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.45,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.45,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.45,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 143
+          },
+          {
+            "key": [
+              "015330",
+              0.45,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.45,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.75,
+              0,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.75,
+              0,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.75,
+              1,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.75,
+              1,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.75,
+              2,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.75,
+              2,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.75,
+              3,
+              0.3
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          },
+          {
+            "key": [
+              "015330",
+              0.75,
+              3,
+              0.6
+            ],
+            "success": true,
+            "fall": false,
+            "forbid": false,
+            "timeout": false,
+            "timeout_inferred": false,
+            "steps": 142
+          }
+        ]
+      }
+    }
+  },
+  "paired_same_reference_base": {
+    "status": "complete",
+    "summary": {
+      "0.0": {
+        "matched": 40,
+        "failure_to_success": 1,
+        "success_to_failure": 2,
+        "success_to_success": 37,
+        "failure_to_failure": 0
+      },
+      "0.45": {
+        "matched": 40,
+        "failure_to_success": 3,
+        "success_to_failure": 3,
+        "success_to_success": 30,
+        "failure_to_failure": 4
+      },
+      "0.75": {
+        "matched": 40,
+        "failure_to_success": 7,
+        "success_to_failure": 1,
+        "success_to_success": 20,
+        "failure_to_failure": 12
+      }
+    },
+    "excluded_sources": [],
+    "cases": [
+      {
+        "key": [
+          "011723",
+          0.0,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": false,
+        "transition": "success_to_failure"
+      },
+      {
+        "key": [
+          "011723",
+          0.0,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.0,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.0,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.0,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.0,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.0,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": false,
+        "transition": "success_to_failure"
+      },
+      {
+        "key": [
+          "011723",
+          0.0,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.45,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.45,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.45,
+          1,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.45,
+          1,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "011723",
+          0.45,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.45,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.45,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.45,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.75,
+          0,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "011723",
+          0.75,
+          0,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "011723",
+          0.75,
+          1,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.75,
+          1,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "011723",
+          0.75,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.75,
+          2,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.75,
+          3,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "011723",
+          0.75,
+          3,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015317",
+          0.0,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.0,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.0,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.0,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.0,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.0,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.0,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.0,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.45,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.45,
+          0,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.45,
+          1,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015317",
+          0.45,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": false,
+        "transition": "success_to_failure"
+      },
+      {
+        "key": [
+          "015317",
+          0.45,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.45,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.45,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.45,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.75,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.75,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": false,
+        "transition": "success_to_failure"
+      },
+      {
+        "key": [
+          "015317",
+          0.75,
+          1,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015317",
+          0.75,
+          1,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015317",
+          0.75,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.75,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.75,
+          3,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "015317",
+          0.75,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.0,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.0,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.0,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.0,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.0,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.0,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.0,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.0,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.45,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.45,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.45,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.45,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.45,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.45,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.45,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.45,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.75,
+          0,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.75,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.75,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.75,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.75,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.75,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.75,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015542",
+          0.75,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.0,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.0,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.0,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.0,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.0,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.0,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.0,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.0,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.45,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.45,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.45,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.45,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.45,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.45,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.45,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.45,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.75,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.75,
+          0,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015547",
+          0.75,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.75,
+          1,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.75,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.75,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015547",
+          0.75,
+          3,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015547",
+          0.75,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.0,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.0,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.0,
+          1,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.0,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.0,
+          2,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.0,
+          2,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.0,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.0,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.45,
+          0,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.45,
+          0,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015571",
+          0.45,
+          1,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": false,
+        "transition": "success_to_failure"
+      },
+      {
+        "key": [
+          "015571",
+          0.45,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": false,
+        "transition": "success_to_failure"
+      },
+      {
+        "key": [
+          "015571",
+          0.45,
+          2,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.45,
+          2,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015571",
+          0.45,
+          3,
+          0.3
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.45,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.75,
+          0,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015571",
+          0.75,
+          0,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.75,
+          1,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015571",
+          0.75,
+          1,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.75,
+          2,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015571",
+          0.75,
+          2,
+          0.6
+        ],
+        "base_success": false,
+        "method_success": false,
+        "transition": "failure_to_failure"
+      },
+      {
+        "key": [
+          "015571",
+          0.75,
+          3,
+          0.3
+        ],
+        "base_success": false,
+        "method_success": true,
+        "transition": "failure_to_success"
+      },
+      {
+        "key": [
+          "015571",
+          0.75,
+          3,
+          0.6
+        ],
+        "base_success": true,
+        "method_success": true,
+        "transition": "success_to_success"
+      }
+    ]
+  },
+  "rationale": "Passed the unchanged development and validation gates. Deterministic BC supplies one current-step correction without iterative denoising; actual batch latency is preserved by source.",
+  "h1_basis": {
+    "intervention": "Single fixed same-data comparison: horizon 6 to 1, uniform loss; model/data/seed/EMA preserved",
+    "source": "https://zhaomingxie.github.io/projects/PDP/PDP.pdf",
+    "location": "Table 4 and action-horizon discussion",
+    "evidence": "Near-term action precision motivates a single-step comparison; literature is not evidence that this system passes"
+  },
+  "diffusion_role": "Independent actual comparison; no claim here that diffusion passes, fails, or is inferior",
+  "failure_semantics": "Flags can overlap. Missing timeout is inferred only for terminal rows with no success/fall/forbidden flag and counted separately.",
+  "latency_semantics": "Per-source p50/p95 over 24-env inference batches; priors included, physics excluded; no pooled percentile fabricated"
+}

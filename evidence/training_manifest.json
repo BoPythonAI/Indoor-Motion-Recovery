@@ -1,0 +1,74 @@
+{
+  "feature_version": "v3_terrain_reference__terrain_correction_v1__foot_clearance_v1",
+  "action_target_version": "executed_total_minus_composed_terrain_prior_v1",
+  "teacher_checkpoint_sha256": "a85bbf74504ef9dc204b95ddbc2715360395744a600f2c288730c664502dba68",
+  "frozen_prior": {
+    "kind": "official_terrain_prior",
+    "flat_checkpoint": "${PROTOMOTIONS_ROOT}/data/pretrained_models/motion_tracker/smpl/last.ckpt",
+    "flat_sha256": "1f6d201e3ef88c691c3f9472b7ed434a44484bef0cc00501cd84ed6cc8e80bb0",
+    "terrain_checkpoint": "${PROJECT_ROOT}/pretrained/smpl-terrains/inference_only.ckpt",
+    "terrain_sha256": "08631f5acd726050914f0d62690557b17297d8d40017a44bf7d2cfbc661fb11f"
+  },
+  "geometry_version": "mjcf_foot_obb_forbidden_aabb_sat15_v1",
+  "surface_mjcf_sha256": "58dc997c830b3ded2d2b4528797ed2768f9528b2f25aa008e541fe3a9083e7cc",
+  "policy_kind": "terrain_prior_surface_correction_student_v1",
+  "directories": [
+    "${PROJECT_ROOT}/pilot_surface50_planned_1200/data/full",
+    "${PROJECT_ROOT}/pilot_surface50_planned_1200/data/takeover",
+    "${PROJECT_ROOT}/pilot_surface50_planned_1200/data/late_takeover",
+    "${PROJECT_ROOT}/student_aggregation_surface_v1/data/bc_early",
+    "${PROJECT_ROOT}/student_aggregation_surface_v1/data/bc_hold",
+    "${PROJECT_ROOT}/student_aggregation_surface_v1/data/diffusion_early",
+    "${PROJECT_ROOT}/student_aggregation_surface_v1/data/diffusion_hold"
+  ],
+  "successful_episodes": 2609,
+  "supervised_frames": 174390,
+  "frames_including_history": 182217,
+  "seed": 109,
+  "steps": 15000,
+  "kind": "bc",
+  "horizon": 1,
+  "sampling": {
+    "order": "equal_stream/equal_family/force_20_40_40/equal_direction/equal_episode/uniform_frame",
+    "missing_strata": "Renormalize only among available successful strata; never synthesize missing recovery labels",
+    "input_leakage": "Metadata changes sample selection only, never observation features",
+    "probability_mass": {
+      "stream": {
+        "/root/autodl-tmp/method_v1_20261004/project_v4_recovery/pilot_surface50_planned_1200/data/full": 0.14285714285714352,
+        "/root/autodl-tmp/method_v1_20261004/project_v4_recovery/pilot_surface50_planned_1200/data/late_takeover": 0.14285714285714315,
+        "/root/autodl-tmp/method_v1_20261004/project_v4_recovery/pilot_surface50_planned_1200/data/takeover": 0.14285714285714343,
+        "/root/autodl-tmp/method_v1_20261004/project_v4_recovery/student_aggregation_surface_v1/data/bc_early": 0.1428571428571434,
+        "/root/autodl-tmp/method_v1_20261004/project_v4_recovery/student_aggregation_surface_v1/data/bc_hold": 0.14285714285714327,
+        "/root/autodl-tmp/method_v1_20261004/project_v4_recovery/student_aggregation_surface_v1/data/diffusion_early": 0.14285714285714346,
+        "/root/autodl-tmp/method_v1_20261004/project_v4_recovery/student_aggregation_surface_v1/data/diffusion_hold": 0.1428571428571434
+      },
+      "family": {
+        "f8779a3dd9ece7fe845f1f3a2b77783b7085c67d6fae116b92f8e6593973062c": 0.10000000000000026,
+        "a1f7349093389b5ab916b18b157ea4f2217a8069b7a8de98abbda6e3e0952d66": 0.1000000000000003,
+        "ef0a5fa444eeac91a6b01a5a4eb0ed75c92e9d2092c2da740b7adea38ae92a99": 0.10000000000000017,
+        "92b57c3fae7f4712cb51c2487b7f9de9f2d8bb25fe422b05bbe5d09d0553488f": 0.10000000000000023,
+        "e4a969d249eaaf93003446979e50f1a0207c45a46b9f180ee3aac0cbb61ed90f": 0.10000000000000012,
+        "86ad68bdb8a65830b1a8a81f71c1f5c2d91349b7464217d8477a5814c5e505a9": 0.10000000000000012,
+        "87ad7c391fb4800b886bd42e92fb01df2c3c8c30de8a87d83a9accfe34b146e3": 0.10000000000000016,
+        "043bd1851d7da1e41354b2d5f80ea99bc86ae0500f3416317e3bd934057a4145": 0.10000000000000024,
+        "9275c5b9ca9674cea894e7a94fe2f9f892638be5a623ec42b0976c3aba9ed474": 0.10000000000000024,
+        "29138b982a40761aaff78aa477d2473c63f86182a95590cb1333e9b9b5c54b1c": 0.10000000000000027
+      },
+      "strength": {
+        "nominal": 0.20000000000000145,
+        "0_to_0.45": 0.3999999999999928,
+        "0.45_to_0.75": 0.3999999999999942
+      },
+      "direction": {
+        "2": 0.2557142857142868,
+        "0": 0.2557142857142867,
+        "1": 0.24428571428571574,
+        "3": 0.24428571428571544
+      }
+    }
+  },
+  "default_weights": "ema",
+  "ema_max_decay": 0.9999,
+  "ema_power": 0.75,
+  "label": "Clean executed correction after real-state takeover, with a same-state composed frozen terrain prior"
+}

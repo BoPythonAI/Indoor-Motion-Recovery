@@ -1,0 +1,127 @@
+{
+  "method": "bc",
+  "student_checkpoint": "${PROJECT_ROOT}/student_h1_v1/checkpoints/bc/last.pt",
+  "checkpoint_sha256": "b3098abe5d13fda49c29d785f566f9fa5c96e332231ec105b8e33bc70a0ac4e2",
+  "training_seed": 109,
+  "inference_seed": 17,
+  "physics_seed": 17,
+  "weights": "ema",
+  "execute_steps": 1,
+  "inference_steps": 8,
+  "num_envs": 24,
+  "horizon": 1,
+  "first_step_weight": 1,
+  "source_ids": [
+    "011723",
+    "015317",
+    "015542",
+    "015547",
+    "015571"
+  ],
+  "summary": {
+    "0.0": {
+      "success": 38,
+      "total": 40
+    },
+    "0.45": {
+      "success": 33,
+      "total": 40
+    },
+    "0.75": {
+      "success": 27,
+      "total": 40
+    }
+  },
+  "per_source": {
+    "011723": {
+      "0.0": {
+        "success": 6,
+        "total": 8,
+        "falls": 2
+      },
+      "0.45": {
+        "success": 7,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 4,
+        "total": 8,
+        "falls": 3
+      }
+    },
+    "015317": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 5,
+        "total": 8,
+        "falls": 0
+      }
+    },
+    "015542": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      }
+    },
+    "015547": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 6,
+        "total": 8,
+        "falls": 2
+      }
+    },
+    "015571": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 4,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 4,
+        "total": 8,
+        "falls": 0
+      }
+    }
+  },
+  "teacher_runtime": "${PROJECT_ROOT}/scripts_teacher_planned",
+  "student_runtime": "${PROJECT_ROOT}/scripts_student_surface",
+  "goal_numeric_contract": "original_bank_terminal_runtime_order_v2",
+  "h1_manifest": "${PROJECT_ROOT}/student_h1_v1/run_manifest.json",
+  "aggregation_manifest": "${PROJECT_ROOT}/student_aggregation_surface_v1/aggregation_manifest.json"
+}

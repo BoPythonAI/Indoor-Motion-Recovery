@@ -1,0 +1,80 @@
+{
+  "status": "PASS",
+  "videos": [
+    {
+      "file": "docs/media/bedroom_door/baseline.mp4",
+      "decoded_frames": 278,
+      "duration_s": 9.26,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/bedroom_door/comparison.mp4",
+      "decoded_frames": 278,
+      "duration_s": 9.26,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/bedroom_door/h1.mp4",
+      "decoded_frames": 278,
+      "duration_s": 9.26,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/bedroom_door/mesh.mp4",
+      "decoded_frames": 278,
+      "duration_s": 9.26,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/lounge_armchair/baseline.mp4",
+      "decoded_frames": 272,
+      "duration_s": 9.06,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/lounge_armchair/comparison.mp4",
+      "decoded_frames": 272,
+      "duration_s": 9.06,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/lounge_armchair/h1.mp4",
+      "decoded_frames": 272,
+      "duration_s": 9.06,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/lounge_armchair/mesh.mp4",
+      "decoded_frames": 272,
+      "duration_s": 9.06,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/office_chair/baseline.mp4",
+      "decoded_frames": 260,
+      "duration_s": 8.66,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/office_chair/comparison.mp4",
+      "decoded_frames": 260,
+      "duration_s": 8.66,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/office_chair/h1.mp4",
+      "decoded_frames": 260,
+      "duration_s": 8.66,
+      "status": "PASS"
+    },
+    {
+      "file": "docs/media/office_chair/mesh.mp4",
+      "decoded_frames": 260,
+      "duration_s": 8.66,
+      "status": "PASS"
+    }
+  ],
+  "scene_count": 3,
+  "all_english_overlays": true,
+  "scope": "Complete MP4 decoding, frame coverage, push-window and contact-source checks."
+}

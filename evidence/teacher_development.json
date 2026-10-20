@@ -1,0 +1,112 @@
+{
+  "checkpoint": "${PROJECT_ROOT}/checkpoints/teacher_surface_v1/train/update_0050.pt",
+  "checkpoint_sha256": "a85bbf74504ef9dc204b95ddbc2715360395744a600f2c288730c664502dba68",
+  "source_ids": [
+    "011723",
+    "015317",
+    "015542",
+    "015547",
+    "015571"
+  ],
+  "summary": {
+    "0.0": {
+      "success": 38,
+      "total": 40
+    },
+    "0.45": {
+      "success": 32,
+      "total": 40
+    },
+    "0.75": {
+      "success": 30,
+      "total": 40
+    }
+  },
+  "per_source": {
+    "011723": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 7,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 3,
+        "total": 8,
+        "falls": 4
+      }
+    },
+    "015317": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      }
+    },
+    "015542": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      }
+    },
+    "015547": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 7,
+        "total": 8,
+        "falls": 1
+      }
+    },
+    "015571": {
+      "0.0": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 3,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "file": "selection.json",
+    "original_sha256": "1b76f4300f040fc56804ecb234b100021e974aa99ac1363e5cb53da9c44099c9",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "bc_development.json",
+    "original_sha256": "a4a7a08851c9db428ea0807a438075c4383dcfe63af255d0c8a9c82093a9dc06",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "bc_validation.json",
+    "original_sha256": "017275d192f3ff443527c3599474dd08521850cfa1dd55e12171c21df32d9601",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "baseline_development.json",
+    "original_sha256": "e0cea9c674647c8826f2f9c47c3c003ff65dd10cce35c37a9401e52554a880e6",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "teacher_development.json",
+    "original_sha256": "0557e47f7e104333857096526d5bdc0c13327b3e269889232908478f6a50c791",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "diffusion_development.json",
+    "original_sha256": "2f6a1833208555c8c5a99948b5b5f514e15bab131108d27dcb721559a3a37de7",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "nominal_only.json",
+    "original_sha256": "1330b37544596dfd625710f7789162314d0d98e90ce67f097fa27f3e152485e2",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "reserved_motion.json",
+    "original_sha256": "eb54eebb3c2fcd2042fa864328620a85b55c71d4348651bdd25b04509dc63125",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "e2e_run.json",
+    "original_sha256": "fec8bee626ace3fadb48f47e7eda5f53d240a872ca1ac373a9bf9efaaebd72a5",
+    "path_rewrite_only": true
+  },
+  {
+    "file": "matched_pair.json",
+    "original_sha256": "e9b478516157eb9ff5eb7591706d068b3b1b94c698c8103d6a418df834ab89f6",
+    "path_rewrite_only": true
+  }
+]

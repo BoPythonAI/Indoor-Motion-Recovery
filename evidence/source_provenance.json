@@ -1,0 +1,564 @@
+{
+  "scope": "Active runtime source and the local geometry check helper; declared launch/model-path changes and normalized line endings.",
+  "files": [
+    {
+      "file": "scripts_student_surface/check_cpu.py",
+      "original_sha256": "c5724ae12178a8e2567e32c5bac1040bb34b1938dcacde76a28b21016c4b8c53",
+      "published_sha256": "c5724ae12178a8e2567e32c5bac1040bb34b1938dcacde76a28b21016c4b8c53",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/check_inference_seed.py",
+      "original_sha256": "c1add44001791b1cbc4f59bd23227cea860fbf6d016fde94319845bb21e99cdb",
+      "published_sha256": "c1add44001791b1cbc4f59bd23227cea860fbf6d016fde94319845bb21e99cdb",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/contracts.py",
+      "original_sha256": "30bd06eb323d8a9d99e521f692e2ada2afeb332ec02356c44d3f9aac304ddb5c",
+      "published_sha256": "30bd06eb323d8a9d99e521f692e2ada2afeb332ec02356c44d3f9aac304ddb5c",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/controller.py",
+      "original_sha256": "74ce5d425e58198067c86510e64f208b0b91a00aeae604e4badd8efb37c946f3",
+      "published_sha256": "74ce5d425e58198067c86510e64f208b0b91a00aeae604e4badd8efb37c946f3",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/dataset.py",
+      "original_sha256": "8a4fd6b366564331a359740f34704c2c157c1c19db00e89b701cc668d663c380",
+      "published_sha256": "8a4fd6b366564331a359740f34704c2c157c1c19db00e89b701cc668d663c380",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/dataset_sampling.py",
+      "original_sha256": "5119370884c609e9b5e52ce741f31799aad451f5add54c654d51743cd9a6fe91",
+      "published_sha256": "5119370884c609e9b5e52ce741f31799aad451f5add54c654d51743cd9a6fe91",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/diagnose_surface_imitation.py",
+      "original_sha256": "5485a0b810ab4adffa871e216b0e4dfd666d57a62f45cdfc36b2ea9810ffed08",
+      "published_sha256": "5485a0b810ab4adffa871e216b0e4dfd666d57a62f45cdfc36b2ea9810ffed08",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/entry.py",
+      "original_sha256": "71ae25d3a94287eecad714cdbb4c0d00cb8803a0966ee44650584782dd47ff5d",
+      "published_sha256": "71ae25d3a94287eecad714cdbb4c0d00cb8803a0966ee44650584782dd47ff5d",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/inspect_surface_pilot_data.py",
+      "original_sha256": "ce5112570acdc57c69af45f5642f6924c15d62bbdaa4e8e2735b16cd474dc7f2",
+      "published_sha256": "ce5112570acdc57c69af45f5642f6924c15d62bbdaa4e8e2735b16cd474dc7f2",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/launch.sh",
+      "original_sha256": "a3284f5c50c84c8f43b8fa3c480d9e104a87414c8310a1c4a29455e89070419d",
+      "published_sha256": "065716a5910066df34c4e970200a37b273dfd6dbbec0344f884a31e67ebbd093",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_student_surface/model.py",
+      "original_sha256": "227108294614bc28729dede1270278fc2689220862cf169898239c21118efaaf",
+      "published_sha256": "227108294614bc28729dede1270278fc2689220862cf169898239c21118efaaf",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/student_collection.py",
+      "original_sha256": "e317e1dfafd10c24de8ca526509abe7688352da27c134eb41c7800797d48f682",
+      "published_sha256": "e317e1dfafd10c24de8ca526509abe7688352da27c134eb41c7800797d48f682",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/student_runtime.py",
+      "original_sha256": "93c97d9d484994fdaf703e088c320d3667813080c2613028e257ff504d3a9659",
+      "published_sha256": "93c97d9d484994fdaf703e088c320d3667813080c2613028e257ff504d3a9659",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/train_student.py",
+      "original_sha256": "288e02f4d7366fd6f5ac428cbbc5b41024a5c58b03a71afeb89660e112c7ce05",
+      "published_sha256": "288e02f4d7366fd6f5ac428cbbc5b41024a5c58b03a71afeb89660e112c7ce05",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_student_surface/warm_dependency.py",
+      "original_sha256": "9f8522538a3c6169d4eadf15cd8e137a90871447dcf54845262ff92b1c286198",
+      "published_sha256": "9f8522538a3c6169d4eadf15cd8e137a90871447dcf54845262ff92b1c286198",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/check_foot_clearance_cpu.py",
+      "original_sha256": "64bfe8bb2445d133d25a69e6e3da96b07830aede7988169bb652749c570c9c1d",
+      "published_sha256": "64bfe8bb2445d133d25a69e6e3da96b07830aede7988169bb652749c570c9c1d",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/check_planned_baseline.py",
+      "original_sha256": "854784ebeeb08de98e24298a86ee81351962473cb2218967b23eb068144b6049",
+      "published_sha256": "854784ebeeb08de98e24298a86ee81351962473cb2218967b23eb068144b6049",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/check_reference_goal_contract.py",
+      "original_sha256": "6ad7e87a3761cacc545e7524d14901b64bef99956108b24e96216c3c957f703c",
+      "published_sha256": "6ad7e87a3761cacc545e7524d14901b64bef99956108b24e96216c3c957f703c",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/check_surface_curriculum.py",
+      "original_sha256": "6d0afb88279a09aa1503b180f0872ad60d43b1a2b4bbc5ad07d5fe01c084f132",
+      "published_sha256": "6d0afb88279a09aa1503b180f0872ad60d43b1a2b4bbc5ad07d5fe01c084f132",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/check_surface_migration.py",
+      "original_sha256": "96d5ac03a3d787be1cfa2e52708f15e519e7d50d339c5734fd52307a87fd4a41",
+      "published_sha256": "96d5ac03a3d787be1cfa2e52708f15e519e7d50d339c5734fd52307a87fd4a41",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/check_surface_student_eval.py",
+      "original_sha256": "2872d693ab01caa56293f130aa24788958da6f47bccd67152aa991c89eb3a4a1",
+      "published_sha256": "2872d693ab01caa56293f130aa24788958da6f47bccd67152aa991c89eb3a4a1",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/check_surface_student_pilot.py",
+      "original_sha256": "ab18829bf7e0c26647eb4946837acdda9d81d7ca4ae07d9a949ab9370d1a5f6b",
+      "published_sha256": "ab18829bf7e0c26647eb4946837acdda9d81d7ca4ae07d9a949ab9370d1a5f6b",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/check_surface_task.py",
+      "original_sha256": "92aacb490cf68041ef91e57c4121ea0caff711ec6942c3b8bcfa336ca051918b",
+      "published_sha256": "92aacb490cf68041ef91e57c4121ea0caff711ec6942c3b8bcfa336ca051918b",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/collect.py",
+      "original_sha256": "7012f0f7a535a93af2c6d4a225b1883ab95612a52044e90973454fd8c10338c7",
+      "published_sha256": "3c1c2d177d8a3506605f60b2cb9a43b00383cf9d1cea70276d5c15c0cf9cb63f",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_teacher_planned/collection_sampling.py",
+      "original_sha256": "a81c618e9df47c1088d0580eedc598b52f28d049d0b3e5e68c363f2be0758ffa",
+      "published_sha256": "a81c618e9df47c1088d0580eedc598b52f28d049d0b3e5e68c363f2be0758ffa",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/collect_recovery.py",
+      "original_sha256": "03ea20daff7c119901df12e78e7c9e808c594ef939eaea14c0a5293a393d4695",
+      "published_sha256": "e67862df52643cb1863b2831bcdb2d056edf16b964bde1ceaab72780d0f4dd14",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_teacher_planned/entry.py",
+      "original_sha256": "68bb90c8f64fa3d4e44ea3af8f4617b3b907b93d1e793c88a2542b6f6b2a9ffa",
+      "published_sha256": "68bb90c8f64fa3d4e44ea3af8f4617b3b907b93d1e793c88a2542b6f6b2a9ffa",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/floor_geometry.py",
+      "original_sha256": "8b22904931ef93ca70f2820ebd3b50a75333332bc8c3d093ab201fc48e4a24dc",
+      "published_sha256": "8b22904931ef93ca70f2820ebd3b50a75333332bc8c3d093ab201fc48e4a24dc",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/foot_clearance.py",
+      "original_sha256": "8a493da8de7dabb30916f136e09bfd02a4f62ac98fb2d6ec25801177f7f4f801",
+      "published_sha256": "8a493da8de7dabb30916f136e09bfd02a4f62ac98fb2d6ec25801177f7f4f801",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/launch.sh",
+      "original_sha256": "a3284f5c50c84c8f43b8fa3c480d9e104a87414c8310a1c4a29455e89070419d",
+      "published_sha256": "065716a5910066df34c4e970200a37b273dfd6dbbec0344f884a31e67ebbd093",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_teacher_planned/migrate_warm_checkpoint.py",
+      "original_sha256": "e997a915dc4b3df2939eed43dfbd727f91d668a1e8dad2d8fe9d45bcd88e45d8",
+      "published_sha256": "e997a915dc4b3df2939eed43dfbd727f91d668a1e8dad2d8fe9d45bcd88e45d8",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/motion_reference.py",
+      "original_sha256": "510098df8baa3a6bb74b9c0ee103db5bb413056d3eced57ec5062eca04a56388",
+      "published_sha256": "510098df8baa3a6bb74b9c0ee103db5bb413056d3eced57ec5062eca04a56388",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/official_tracker.py",
+      "original_sha256": "df5afcda25889f6693dbe2382f89d193cbcbc88e5b1b54616992e1b76930bbd1",
+      "published_sha256": "693220312766a95b97a153c7a0f3f3143b1f9137bb80fa0869dad82679613711",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_teacher_planned/prepare_planned_baseline.py",
+      "original_sha256": "52a2cad1b975356ca492ba9acbb263c6ed69e1628f90d845bef0b228c89c2c6d",
+      "published_sha256": "52a2cad1b975356ca492ba9acbb263c6ed69e1628f90d845bef0b228c89c2c6d",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/prepare_planned_evaluation.py",
+      "original_sha256": "215f8a7eb207cafecb70929eec1efdd26490b194bef56a338b42876bae5930a5",
+      "published_sha256": "215f8a7eb207cafecb70929eec1efdd26490b194bef56a338b42876bae5930a5",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/prepare_surface_student_eval.py",
+      "original_sha256": "3f2a522467bd8b584a1e3a280dc789701129663c58449cf4193ee7db1bbc0d3a",
+      "published_sha256": "3f2a522467bd8b584a1e3a280dc789701129663c58449cf4193ee7db1bbc0d3a",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/prepare_surface_student_pilot.py",
+      "original_sha256": "a61016aa6bb9eb6d024f50026c9f297bbd5ce194013beb8f635ef957e8fc214b",
+      "published_sha256": "a61016aa6bb9eb6d024f50026c9f297bbd5ce194013beb8f635ef957e8fc214b",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/recovery_runtime.py",
+      "original_sha256": "136822749bf4f15b952e04eae7b96c2ab17be943df7dc23078c118b3e8f00cfa",
+      "published_sha256": "136822749bf4f15b952e04eae7b96c2ab17be943df7dc23078c118b3e8f00cfa",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/reference_goal_contract.py",
+      "original_sha256": "816534ae172c1f0b0c36a7c9760bab146c4a8728e74e6ec7852ffb7437ee0f3d",
+      "published_sha256": "816534ae172c1f0b0c36a7c9760bab146c4a8728e74e6ec7852ffb7437ee0f3d",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/reference_terrain_fix.py",
+      "original_sha256": "bcfc60554a6568b6509ebc8a8a5bf19ebdd2bf3a21b56e328748ae9192567197",
+      "published_sha256": "bcfc60554a6568b6509ebc8a8a5bf19ebdd2bf3a21b56e328748ae9192567197",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/run_surface_cycles.py",
+      "original_sha256": "68f5dc867c414882b013aa2502f836cc572090925c438e0d7521bb7caeb374e5",
+      "published_sha256": "68f5dc867c414882b013aa2502f836cc572090925c438e0d7521bb7caeb374e5",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/scene_adapter.py",
+      "original_sha256": "20abf9faf9681655a0eded0db991df5918de1b4a928195f64bea414f948fcefd",
+      "published_sha256": "20abf9faf9681655a0eded0db991df5918de1b4a928195f64bea414f948fcefd",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/scene_heightmap.py",
+      "original_sha256": "e22247eab4586a7ad81fe9e5fbd53613da417618a680517a6a41c488957f2a04",
+      "published_sha256": "e22247eab4586a7ad81fe9e5fbd53613da417618a680517a6a41c488957f2a04",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/surface_contract.py",
+      "original_sha256": "3584d227687fad440f6f464194763c080f75e3401ed6a59df4c4bdc0f2e391cf",
+      "published_sha256": "3584d227687fad440f6f464194763c080f75e3401ed6a59df4c4bdc0f2e391cf",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/surface_curriculum.py",
+      "original_sha256": "1eda44d12fb16f3ef3a78ece9d4594342015b14c8cbfa3a727665d2086d03321",
+      "published_sha256": "1eda44d12fb16f3ef3a78ece9d4594342015b14c8cbfa3a727665d2086d03321",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/teacher.py",
+      "original_sha256": "d50e7517a44dbf7f6948c12f2d254bf4362aca57d30d368e3e06208b9f5a7416",
+      "published_sha256": "d50e7517a44dbf7f6948c12f2d254bf4362aca57d30d368e3e06208b9f5a7416",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/teacher_factory.py",
+      "original_sha256": "0fb3217ff9e9823af328b4289c60cdc6a78b81c19b07c92fe9dbabac988be953",
+      "published_sha256": "0fb3217ff9e9823af328b4289c60cdc6a78b81c19b07c92fe9dbabac988be953",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/v5_task.py",
+      "original_sha256": "40deaac3914a1c5d753be905fdba3f72603b04ba759cb2751c32bddc810857e6",
+      "published_sha256": "40deaac3914a1c5d753be905fdba3f72603b04ba759cb2751c32bddc810857e6",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/warm_policy.py",
+      "original_sha256": "c5861c7e952b63dacd3416db3fd2475c761dd75c1ba2f7ba38569cb96e3e296b",
+      "published_sha256": "c5861c7e952b63dacd3416db3fd2475c761dd75c1ba2f7ba38569cb96e3e296b",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/warm_ppo.py",
+      "original_sha256": "82f7b38db6cd4c3043eabf54d1d357f8dd146bbe19aafde102fd803ec3c3fd6e",
+      "published_sha256": "82f7b38db6cd4c3043eabf54d1d357f8dd146bbe19aafde102fd803ec3c3fd6e",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/warm_prior.py",
+      "original_sha256": "48390b278554bbb1f4ed7853e3a157274da1a31c0ed3931fb29c225776112325",
+      "published_sha256": "48390b278554bbb1f4ed7853e3a157274da1a31c0ed3931fb29c225776112325",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/warm_runtime.py",
+      "original_sha256": "aaf1f8c5db2b22f266630df63e4d128c3124fc299d3d75ef854fc21b20f165da",
+      "published_sha256": "aaf1f8c5db2b22f266630df63e4d128c3124fc299d3d75ef854fc21b20f165da",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/warm_task.py",
+      "original_sha256": "428bfd22d5a0aa27213525c064aabb7d16c5810614778a83cb449aa10e7285d5",
+      "published_sha256": "428bfd22d5a0aa27213525c064aabb7d16c5810614778a83cb449aa10e7285d5",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_planned/warm_task_base.py",
+      "original_sha256": "21c9703b375a0bcfd25b28951d163220b6b278e92d8360606cec698047c238ab",
+      "published_sha256": "21c9703b375a0bcfd25b28951d163220b6b278e92d8360606cec698047c238ab",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/check_foot_clearance_cpu.py",
+      "original_sha256": "64bfe8bb2445d133d25a69e6e3da96b07830aede7988169bb652749c570c9c1d",
+      "published_sha256": "64bfe8bb2445d133d25a69e6e3da96b07830aede7988169bb652749c570c9c1d",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/check_surface_curriculum.py",
+      "original_sha256": "6d0afb88279a09aa1503b180f0872ad60d43b1a2b4bbc5ad07d5fe01c084f132",
+      "published_sha256": "6d0afb88279a09aa1503b180f0872ad60d43b1a2b4bbc5ad07d5fe01c084f132",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/check_surface_migration.py",
+      "original_sha256": "96d5ac03a3d787be1cfa2e52708f15e519e7d50d339c5734fd52307a87fd4a41",
+      "published_sha256": "96d5ac03a3d787be1cfa2e52708f15e519e7d50d339c5734fd52307a87fd4a41",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/check_surface_student_eval.py",
+      "original_sha256": "2872d693ab01caa56293f130aa24788958da6f47bccd67152aa991c89eb3a4a1",
+      "published_sha256": "2872d693ab01caa56293f130aa24788958da6f47bccd67152aa991c89eb3a4a1",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/check_surface_student_pilot.py",
+      "original_sha256": "ab18829bf7e0c26647eb4946837acdda9d81d7ca4ae07d9a949ab9370d1a5f6b",
+      "published_sha256": "ab18829bf7e0c26647eb4946837acdda9d81d7ca4ae07d9a949ab9370d1a5f6b",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/check_surface_task.py",
+      "original_sha256": "92aacb490cf68041ef91e57c4121ea0caff711ec6942c3b8bcfa336ca051918b",
+      "published_sha256": "92aacb490cf68041ef91e57c4121ea0caff711ec6942c3b8bcfa336ca051918b",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/collect.py",
+      "original_sha256": "7012f0f7a535a93af2c6d4a225b1883ab95612a52044e90973454fd8c10338c7",
+      "published_sha256": "3c1c2d177d8a3506605f60b2cb9a43b00383cf9d1cea70276d5c15c0cf9cb63f",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_teacher_surface/collection_sampling.py",
+      "original_sha256": "a81c618e9df47c1088d0580eedc598b52f28d049d0b3e5e68c363f2be0758ffa",
+      "published_sha256": "a81c618e9df47c1088d0580eedc598b52f28d049d0b3e5e68c363f2be0758ffa",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/collect_recovery.py",
+      "original_sha256": "03ea20daff7c119901df12e78e7c9e808c594ef939eaea14c0a5293a393d4695",
+      "published_sha256": "e67862df52643cb1863b2831bcdb2d056edf16b964bde1ceaab72780d0f4dd14",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_teacher_surface/entry.py",
+      "original_sha256": "68bb90c8f64fa3d4e44ea3af8f4617b3b907b93d1e793c88a2542b6f6b2a9ffa",
+      "published_sha256": "68bb90c8f64fa3d4e44ea3af8f4617b3b907b93d1e793c88a2542b6f6b2a9ffa",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/floor_geometry.py",
+      "original_sha256": "8b22904931ef93ca70f2820ebd3b50a75333332bc8c3d093ab201fc48e4a24dc",
+      "published_sha256": "8b22904931ef93ca70f2820ebd3b50a75333332bc8c3d093ab201fc48e4a24dc",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/foot_clearance.py",
+      "original_sha256": "8a493da8de7dabb30916f136e09bfd02a4f62ac98fb2d6ec25801177f7f4f801",
+      "published_sha256": "8a493da8de7dabb30916f136e09bfd02a4f62ac98fb2d6ec25801177f7f4f801",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/launch.sh",
+      "original_sha256": "a3284f5c50c84c8f43b8fa3c480d9e104a87414c8310a1c4a29455e89070419d",
+      "published_sha256": "065716a5910066df34c4e970200a37b273dfd6dbbec0344f884a31e67ebbd093",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_teacher_surface/migrate_warm_checkpoint.py",
+      "original_sha256": "e997a915dc4b3df2939eed43dfbd727f91d668a1e8dad2d8fe9d45bcd88e45d8",
+      "published_sha256": "e997a915dc4b3df2939eed43dfbd727f91d668a1e8dad2d8fe9d45bcd88e45d8",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/motion_reference.py",
+      "original_sha256": "510098df8baa3a6bb74b9c0ee103db5bb413056d3eced57ec5062eca04a56388",
+      "published_sha256": "510098df8baa3a6bb74b9c0ee103db5bb413056d3eced57ec5062eca04a56388",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/official_tracker.py",
+      "original_sha256": "df5afcda25889f6693dbe2382f89d193cbcbc88e5b1b54616992e1b76930bbd1",
+      "published_sha256": "693220312766a95b97a153c7a0f3f3143b1f9137bb80fa0869dad82679613711",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_teacher_surface/prepare_surface_student_eval.py",
+      "original_sha256": "06c166b71abf9571824852222333379ef957e401ab2b1e0cd1b4bff8cf76efd9",
+      "published_sha256": "06c166b71abf9571824852222333379ef957e401ab2b1e0cd1b4bff8cf76efd9",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/prepare_surface_student_pilot.py",
+      "original_sha256": "a61016aa6bb9eb6d024f50026c9f297bbd5ce194013beb8f635ef957e8fc214b",
+      "published_sha256": "a61016aa6bb9eb6d024f50026c9f297bbd5ce194013beb8f635ef957e8fc214b",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/recovery_runtime.py",
+      "original_sha256": "136822749bf4f15b952e04eae7b96c2ab17be943df7dc23078c118b3e8f00cfa",
+      "published_sha256": "136822749bf4f15b952e04eae7b96c2ab17be943df7dc23078c118b3e8f00cfa",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/reference_terrain_fix.py",
+      "original_sha256": "bcfc60554a6568b6509ebc8a8a5bf19ebdd2bf3a21b56e328748ae9192567197",
+      "published_sha256": "bcfc60554a6568b6509ebc8a8a5bf19ebdd2bf3a21b56e328748ae9192567197",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/run_surface_cycles.py",
+      "original_sha256": "68f5dc867c414882b013aa2502f836cc572090925c438e0d7521bb7caeb374e5",
+      "published_sha256": "68f5dc867c414882b013aa2502f836cc572090925c438e0d7521bb7caeb374e5",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/scene_adapter.py",
+      "original_sha256": "20abf9faf9681655a0eded0db991df5918de1b4a928195f64bea414f948fcefd",
+      "published_sha256": "20abf9faf9681655a0eded0db991df5918de1b4a928195f64bea414f948fcefd",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/scene_heightmap.py",
+      "original_sha256": "e22247eab4586a7ad81fe9e5fbd53613da417618a680517a6a41c488957f2a04",
+      "published_sha256": "e22247eab4586a7ad81fe9e5fbd53613da417618a680517a6a41c488957f2a04",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/surface_contract.py",
+      "original_sha256": "3584d227687fad440f6f464194763c080f75e3401ed6a59df4c4bdc0f2e391cf",
+      "published_sha256": "3584d227687fad440f6f464194763c080f75e3401ed6a59df4c4bdc0f2e391cf",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/surface_curriculum.py",
+      "original_sha256": "1eda44d12fb16f3ef3a78ece9d4594342015b14c8cbfa3a727665d2086d03321",
+      "published_sha256": "1eda44d12fb16f3ef3a78ece9d4594342015b14c8cbfa3a727665d2086d03321",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/teacher.py",
+      "original_sha256": "1cf9207511a3ba16229deed8137bd61c0adcb73639704b50ff342e5c4dd4959a",
+      "published_sha256": "1cf9207511a3ba16229deed8137bd61c0adcb73639704b50ff342e5c4dd4959a",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/teacher_factory.py",
+      "original_sha256": "0fb3217ff9e9823af328b4289c60cdc6a78b81c19b07c92fe9dbabac988be953",
+      "published_sha256": "0fb3217ff9e9823af328b4289c60cdc6a78b81c19b07c92fe9dbabac988be953",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/v5_task.py",
+      "original_sha256": "b4586599011d2382678858dc685132a052e9efdc9413e91ef04d660155521a0f",
+      "published_sha256": "b4586599011d2382678858dc685132a052e9efdc9413e91ef04d660155521a0f",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/warm_policy.py",
+      "original_sha256": "c5861c7e952b63dacd3416db3fd2475c761dd75c1ba2f7ba38569cb96e3e296b",
+      "published_sha256": "c5861c7e952b63dacd3416db3fd2475c761dd75c1ba2f7ba38569cb96e3e296b",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/warm_ppo.py",
+      "original_sha256": "82f7b38db6cd4c3043eabf54d1d357f8dd146bbe19aafde102fd803ec3c3fd6e",
+      "published_sha256": "82f7b38db6cd4c3043eabf54d1d357f8dd146bbe19aafde102fd803ec3c3fd6e",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/warm_prior.py",
+      "original_sha256": "48390b278554bbb1f4ed7853e3a157274da1a31c0ed3931fb29c225776112325",
+      "published_sha256": "48390b278554bbb1f4ed7853e3a157274da1a31c0ed3931fb29c225776112325",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/warm_runtime.py",
+      "original_sha256": "aaf1f8c5db2b22f266630df63e4d128c3124fc299d3d75ef854fc21b20f165da",
+      "published_sha256": "aaf1f8c5db2b22f266630df63e4d128c3124fc299d3d75ef854fc21b20f165da",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/warm_task.py",
+      "original_sha256": "428bfd22d5a0aa27213525c064aabb7d16c5810614778a83cb449aa10e7285d5",
+      "published_sha256": "428bfd22d5a0aa27213525c064aabb7d16c5810614778a83cb449aa10e7285d5",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_teacher_surface/warm_task_base.py",
+      "original_sha256": "21c9703b375a0bcfd25b28951d163220b6b278e92d8360606cec698047c238ab",
+      "published_sha256": "21c9703b375a0bcfd25b28951d163220b6b278e92d8360606cec698047c238ab",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_surface_demo/check_cpu.py",
+      "original_sha256": "c2f687e0305dc8c2ec5c7855472cf7bd407cf1d9d9f5ec6ebfaf19a42161469e",
+      "published_sha256": "c2f687e0305dc8c2ec5c7855472cf7bd407cf1d9d9f5ec6ebfaf19a42161469e",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_surface_demo/run_system.py",
+      "original_sha256": "d47dbe7e7551015972cc4dd90812d0058bc3d5a2d6e64235f0af15c550925187",
+      "published_sha256": "d47dbe7e7551015972cc4dd90812d0058bc3d5a2d6e64235f0af15c550925187",
+      "modified_for_portability": false
+    },
+    {
+      "file": "scripts_demo/vlm_relations.py",
+      "original_sha256": "f7000bcd046de064050c79869c62851366d04013a357683755a4f56c5f7ffdd4",
+      "published_sha256": "ac2f5b12c416eef6fe2ffa846cbd9a5ab689373357eb265e3901895fc88c859c",
+      "modified_for_portability": true
+    },
+    {
+      "file": "scripts_demo/task_program.py",
+      "original_sha256": "22a7d601515a4504164583b4738c6311f80dd5cbc483f556074e62cdf34e01ce",
+      "published_sha256": "22a7d601515a4504164583b4738c6311f80dd5cbc483f556074e62cdf34e01ce",
+      "modified_for_portability": false
+    },
+    {
+      "file": "terminal_reference_probe.py",
+      "original_sha256": "bd01fc73bd6de4ca6dbb1655b192bdaab63c7c3a0c8c4e6c7548ea05ba745aab",
+      "published_sha256": "bd01fc73bd6de4ca6dbb1655b192bdaab63c7c3a0c8c4e6c7548ea05ba745aab",
+      "modified_for_portability": false,
+      "origin": "Existing local project geometry check helper"
+    }
+  ]
+}

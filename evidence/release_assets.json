@@ -1,0 +1,15 @@
+{
+  "tag": "v1.0.0",
+  "assets": [
+    {
+      "name": "h1-bc-ema.pt",
+      "bytes": 14297521,
+      "sha256": "b3098abe5d13fda49c29d785f566f9fa5c96e332231ec105b8e33bc70a0ac4e2"
+    },
+    {
+      "name": "demo_sources.zip",
+      "bytes": 5020483,
+      "sha256": "7597e086465da056f4182df832d18e51002efbbf92854105cdbd00295d4ceebe"
+    }
+  ]
+}

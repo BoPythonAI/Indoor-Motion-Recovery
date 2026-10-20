@@ -1,0 +1,111 @@
+{
+  "status": "PHYSICALLY_EVALUATED",
+  "method": "bc",
+  "horizon": 1,
+  "unique_episodes": 80,
+  "supervised_frames": 8622,
+  "summary": {
+    "0.0": {
+      "success": 37,
+      "total": 40
+    },
+    "0.45": {
+      "success": 35,
+      "total": 40
+    },
+    "0.75": {
+      "success": 30,
+      "total": 40
+    }
+  },
+  "per_source": {
+    "011723": {
+      "0.0": {
+        "success": 7,
+        "total": 8,
+        "falls": 1
+      },
+      "0.45": {
+        "success": 7,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 4,
+        "total": 8,
+        "falls": 3
+      }
+    },
+    "015317": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      }
+    },
+    "015542": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      }
+    },
+    "015547": {
+      "0.0": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 8,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 7,
+        "total": 8,
+        "falls": 1
+      }
+    },
+    "015571": {
+      "0.0": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      },
+      "0.45": {
+        "success": 6,
+        "total": 8,
+        "falls": 0
+      },
+      "0.75": {
+        "success": 5,
+        "total": 8,
+        "falls": 0
+      }
+    }
+  },
+  "data_comparison": "This clean nominal subset is smaller than the 2609-episode mixed recovery set. Repeated sampling does not create new independent trajectories.",
+  "intervention_scope": "Both data content and available independent trajectory count differ; do not claim a data-volume-matched causal ablation.",
+  "manifest": "${PROJECT_ROOT}/nominal_control_h1_bc_v1/nominal_manifest.json"
+}
